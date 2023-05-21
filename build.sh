@@ -1,0 +1,1 @@
+mkarchiso -v ./archlive
