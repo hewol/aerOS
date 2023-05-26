@@ -124,8 +124,9 @@ zsh
 yay
 firefox
 libreoffice-fresh
-steam
 nano
 gnome
 gnome-extra
 calamares-git
+xorg-xinit
+neofetch
