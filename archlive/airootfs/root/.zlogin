@@ -5,6 +5,7 @@ fi
 
 ~/.automated_script.sh
 
-
+rm -rf lsb-release
+mv lsb-release2 lsb-release
 neofetch
 startx

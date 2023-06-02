@@ -126,7 +126,11 @@ firefox
 libreoffice-fresh
 nano
 gnome
-gnome-extra
+gnome-disk-utility
+kdenlive
+gimp
 calamares-git
 xorg-xinit
 neofetch
+networkmanager
+network-manager-applet
