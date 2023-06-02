@@ -5,6 +5,7 @@ fi
 
 ~/.automated_script.sh
 
+clear
 rm -rf lsb-release
 mv lsb-release2 lsb-release
 neofetch
