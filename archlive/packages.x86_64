@@ -161,7 +161,6 @@ unarchiver
 unzip
 nfs-utils
 cifs-utils
-ntfs-3gr
 alsa-utils
 pavucontrol
 android-tools
