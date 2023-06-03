@@ -161,9 +161,6 @@ p7zip
 unrar
 unarchiver
 unzip
-unace
-xz
-rsync
 nfs-utils
 cifs-utils
 ntfs-3g
