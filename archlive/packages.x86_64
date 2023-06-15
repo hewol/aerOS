@@ -117,7 +117,6 @@ vpnc
 wireless-regdb
 wireless_tools
 wpa_supplicant
-
 zsh
 yay
 firefox
@@ -176,3 +175,4 @@ xorg-xinput
 xorg-xwininfo
 kdeconnect
 sshfs
+plymouth
