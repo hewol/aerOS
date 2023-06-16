@@ -15,5 +15,5 @@ You can help us make aerOS by emailing us at hewol@proton.me or join our Discord
 
 
 
-### aeros calamares config repo: https://github.com/hewol/aeros_mods_repo
+### aeros calamares config repo: https://github.com/hewol/aeros_calamares
 
