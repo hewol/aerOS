@@ -10,10 +10,9 @@ You can help us make aerOS by emailing us at hewol@proton.me or join our Discord
 ![aerOS](https://hewol.github.io/assets/img/aeros-pic.png)
 
 
-## Other aerOS repositories
+## Other aerOS info/repositories
 
-
-
+### Maintain List: https://github.com/hewol/aerOS/blob/main/MAINTAIN.md
 
 ### aeros calamares config repo: https://github.com/hewol/aeros-calamares
 
