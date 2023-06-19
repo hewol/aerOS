@@ -10,5 +10,15 @@ This is the list of maintained versions of aerOS, for maintained versions you wi
 | v1.0 Beta     |  ? |
 | v1.0 Early Beta     | :white_check_mark: |
 
+<details>
+<summary>Full List</summary>
+
+| Version's     | Maintained         |
+| -------       | ------------------ |
+| v1.0 Early Beta 2 (ESB2)     | :white_check_mark: |
+| v1.0 Early Beta 1 (ESB1)   | :white_check_mark: |
+
+</details>
+
 
 

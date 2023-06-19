@@ -2,6 +2,5 @@ NAME="aerOS"
 PRETTY_NAME="aerOS"
 ID=arch
 BUILD_ID=v1-early-stage-beta
-ANSI_COLOR="38;2;23;147;209"
 HOME_URL="https://hewol.github.io"
 LOGO=aeros-logo
