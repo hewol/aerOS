@@ -12,7 +12,7 @@ You can help us make aerOS by emailing us at hewol@proton.me or join our Discord
 
 ## Other aerOS info/repositories
 
-### Maintain List: https://github.com/hewol/aerOS/blob/main/MAINTAIN.md
+### Maintain Policy List: https://github.com/hewol/aerOS/blob/main/MAINTAIN.md
 
 ### aeros calamares config repo: https://github.com/hewol/aeros-calamares
 
