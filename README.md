@@ -22,6 +22,9 @@ You can replace `~/iso` with your own directory of your choice.
 
 **NOTE**: Make sure to clean the `~/iso/` directory before rebuilding: `yes | rm -r ~/iso/aerOS*`.
 
+**NOTE**: Our package repository is hosted on github pages which might not work all the time
+so keep trying until it works :).
+
 ## Other aerOS info/repositories
 
 ### Maintain Policy List: https://github.com/hewol/aerOS/blob/main/MAINTAIN.md
