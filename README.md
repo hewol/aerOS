@@ -9,6 +9,17 @@ You can help us make aerOS by emailing us at hewol@proton.me or join our Discord
 
 ![aerOS](https://hewol.github.io/assets/img/aeros-pic.png)
 
+# Steps to build
+
+Create a directory where the resulting files of `mkarchiso` will go eg: `mkdir ~/iso`.
+
+- `git clone https://github.com/hewol/aerOS`
+- `cd aerOS`
+- `sudo mkarchiso -v -w ~/iso/aerOS/ -o ~/iso archlive`
+
+**NOTE**: Make sure *chaotic-mirrorlist* is present in */ect/pacman.d/*
+
+**NOTE**: Make sure to clean the *isodir* directory before rebuilding `yes | rm -r isodir/aerOS*`.
 
 ## Other aerOS info/repositories
 
