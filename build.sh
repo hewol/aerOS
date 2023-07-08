@@ -15,7 +15,7 @@ if [ ! -f /etc/pacman.d/chaotic-mirrorlist ]; then
             echo "Installing chaotic aur"
             sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
             sudo pacman-key --lsign-key 3056513887B78AEB
-            sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+            sudo pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
             if [ -f /etc/pacman.d/chaotic-mirrorlist ]; then
                 echo "Successfully installed chaotic aur ... continuing with the build."
             else
