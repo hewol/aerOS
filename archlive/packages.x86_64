@@ -171,6 +171,8 @@ xorg-xrandr
 xorg-xfontsel
 xorg-xlsfonts
 xorg-xkill
+networkmanager
+network-manager-applet
 xorg-xinput
 xorg-xwininfo
 kdeconnect

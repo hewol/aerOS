@@ -13,5 +13,4 @@ You can help us make aerOS by emailing us at hewol@proton.me or join our Discord
 
 ### Maintain Policy List: https://github.com/hewol/aerOS/blob/main/MAINTAIN.md
 ### aerOS wallpapers repo: https://github.com/hewol/aeros-wallpapers
-### aerOS calamares config repo: https://github.com/hewol/aeros-calamares
 
