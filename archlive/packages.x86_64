@@ -162,9 +162,6 @@ nfs-utils
 cifs-utils
 alsa-utils
 pavucontrol
-android-tools
-android-udev
-fish
 xorg-server
 xorg-xinit
 xorg-xrandr
@@ -178,3 +175,6 @@ xorg-xwininfo
 kdeconnect
 sshfs
 plymouth
+tela-circle-icon
+vimix-cursors
+orchis-theme-git
