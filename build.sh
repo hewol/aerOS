@@ -9,6 +9,17 @@ clean() {
     sudo rm -r work
 }
 
+enable_services() {
+
+    printf "Creating symlinks for Display manager.\n"
+
+    ln -svf /usr/lib/systemd/system/graphical.target archlive/airootfs/etc/systemd/system/default.target
+    ln -svf /usr/lib/systemd/system/gdm.service archlive/airootfs/etc/systemd/system/display-manager.service
+
+}
+
+enable_services
+
 if [ ! -f /etc/pacman.d/chaotic-mirrorlist ]; then
     echo -n "Chaotic AUR is not installed in your system. Do you want to install it? [Y/n] " && read install
         if [[ ${install:0:1} == "y" || ${install:0:1} == "" ]]; then
@@ -31,6 +42,7 @@ fi
 while $rerun; do
     test -d work && clean
     # ! sudo mkarchiso -v archlive 2>&1 | tee debug.log
+    enable_services
     ! sudo mkarchiso -v archlive
     retcod=${PIPESTATUS[0]}
     if [ $retcod == 0 ]; then
