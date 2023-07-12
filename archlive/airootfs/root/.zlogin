@@ -7,8 +7,8 @@ fi
 
 clear
 rm -rf lsb-release
-mv lsb-release2 lsb-release
-neofetch
-systemctl enable gdm
-systemctl enable networkmanager
-startx
+# mv lsb-release2 lsb-release
+# neofetch
+# systemctl enable gdm
+# systemctl enable networkmanager
+# startx
