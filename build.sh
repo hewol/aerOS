@@ -11,14 +11,19 @@ clean() {
 
 enable_services() {
 
-    printf "Creating symlinks for Display manager.\n"
-
+    printf "Creating symlinks for Display Manager.\n"
     ln -svf /usr/lib/systemd/system/graphical.target archlive/airootfs/etc/systemd/system/default.target
     ln -svf /usr/lib/systemd/system/gdm.service archlive/airootfs/etc/systemd/system/display-manager.service
+    echo
 
+    printf "Creating symlinks for Network Manager.\n"
+    mkdir -p archlive/airootfs/etc/systemd/system/multi-user.target.wants
+    ln -svf /usr/lib/systemd/system/NetworkManager.service archlive/airootfs/etc/systemd/system/multi-user.target.wants/NetworkManager.service
+    ln -svf /usr/lib/systemd/system/NetworkManager-dispatcher.service archlive/airootfs/etc/systemd/system/dbus-org.freedesktop.nm-dispatcher.service
+    mkdir -p archlive/airootfs/etc/systemd/system/network-online.target.wants
+    ln -svf /usr/lib/systemd/system/NetworkManager-wait-online.service archlive/airootfs/etc/systemd/system/network-online.target.wants/NetworkManager-wait-online.service
+    echo
 }
-
-enable_services
 
 if [ ! -f /etc/pacman.d/chaotic-mirrorlist ]; then
     echo -n "Chaotic AUR is not installed in your system. Do you want to install it? [Y/n] " && read install
