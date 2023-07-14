@@ -6,9 +6,6 @@ fi
 ~/.automated_script.sh
 
 clear
-rm -rf lsb-release
-# mv lsb-release2 lsb-release
-# neofetch
-# systemctl enable gdm
-# systemctl enable networkmanager
-# startx
+rm -rf /etc/lsb-release
+cp /etc/lsb-release2 /etc/lsb-release
+
