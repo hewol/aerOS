@@ -11,7 +11,7 @@ FROM library/archlinux:latest
 RUN pacman -Syu --noconfirm
 
 #Install git and archiso and other
-RUN pacman -S git archisogdm networkmanager network-manager-applet --noconfirm
+RUN pacman -S git archiso gdm networkmanager network-manager-applet --noconfirm
 
 # Fixes Keyring
 RUN pacman-key --init 
