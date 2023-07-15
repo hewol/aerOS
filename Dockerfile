@@ -27,7 +27,7 @@ RUN pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-key
 #Copy the build script and allow him to be executed
 COPY files/build.sh root/
 
-#Place the terminal in the home folder
+#Place the script in the home folder
 RUN ["chmod", "+x", "root/build.sh"]
-
 ENTRYPOINT ["./root/build.sh"]
+RUN ./root/build.sh
