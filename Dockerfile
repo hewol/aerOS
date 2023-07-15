@@ -30,4 +30,4 @@ COPY files/build.sh root/
 #Place the script in the home folder
 RUN ["chmod", "+x", "root/build.sh"]
 ENTRYPOINT ["./root/build.sh"]
-RUN ./root/build.sh
+RUN ["sudo", "./root/build.sh"]
