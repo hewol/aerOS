@@ -4,7 +4,7 @@
 iso_name="aerOS"
 iso_label="ARCH_$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y%m)"
 iso_publisher="Hewol <https://hewol.github.io>"
-iso_application="aerOS Live/Rescue Media"
+iso_application="aerOS Live Media"
 iso_version="$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y.%m.%d)"
 install_dir="arch"
 buildmodes=('iso')
