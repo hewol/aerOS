@@ -5,8 +5,8 @@
 This is the list of maintained versions of aerOS, for maintained versions you will get official support, for unmaintained versions of aerOS you wont get official support but you will get support from the community and updates for packages as all packages are in rolling release but you wont get the new features or bug fixes. 
 
 Each ESB (Early Stage Beta) Release gets one month of support.
-Each Beta Release gets five months of support.
-Each Release gets one year of support.
+Each Beta Release gets five months of support..
+Each Release gets one year of support...
 
 | Version's     | Maintained         |
 | -------       | ------------------ |
