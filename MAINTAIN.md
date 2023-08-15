@@ -20,8 +20,8 @@ Each Release gets one year of support...
 | Version's     | Maintained         |
 | -------       | ------------------ |
 | v1.0 Early Beta 8 (ESB8)   | :white_check_mark: |
-| v1.0 Early Beta 7 (ESB7)   | :white_check_mark: |
-| v1.0 Early Beta 6 (ESB6)   | :white_check_mark: |
+| v1.0 Early Beta 7 (ESB7)   | :x: |
+| v1.0 Early Beta 6 (ESB6)   | :x: |
 | v1.0 Early Beta 5 (ESB5)   | :x: |
 | v1.0 Early Beta 4 (ESB4)   | :x: |
 | v1.0 Early Beta 3 (ESB3)   | :x: |
