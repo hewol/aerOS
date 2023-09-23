@@ -9,8 +9,9 @@ You can help us make aerOS by emailing us at hewol@proton.me or join our Discord
 
 ![aerOS](https://hewol.github.io/assets/img/aeros-pic.png)
 
-## Other aerOS info/repositories
+## Other aerOS info/repo
 
 ### Maintain Policy List: https://github.com/hewol/aerOS/blob/main/MAINTAIN.md
 ### aerOS wallpapers repo: https://github.com/hewol/aeros-wallpapers
+### aerOS Server Edition: https://github.com/hewol/aerOS-se
 
