@@ -118,7 +118,7 @@ wireless-regdb
 wireless_tools
 wpa_supplicant
 zsh
-#yay
+yay
 firefox
 libreoffice-fresh
 nano
@@ -174,19 +174,10 @@ xorg-xwininfo
 kdeconnect
 sshfs
 plymouth
-#tela-circle-icon
-#vimix-cursors
-#orchis-theme-git
-#alg-gnome-settings
 os-prober
-#gnome-software-packagekit-plugin
-#libreoffice-still
-#ttf-ms-fonts
 noto-fonts
 noto-fonts-cjk
 cups
-
-## AEROS-REPO
 calamares
 ckbcomp
 mkinitcpio-openswap
