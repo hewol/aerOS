@@ -1,17 +1,18 @@
 # aerOS
-### aerOS is our own Arch Linux Respin OS.
-* Easy to use
-* Super Fast
-* Inculdes yay-AUR 
-* Includes custom UI
+This is our own Arch Linux Re-spin OS.
 
-You can help us make aerOS by emailing us at hewol@proton.me or join our Discord Server: https://discord.gg/haTmcAtKCP
+### Benefits to using aerOS:
+- Easy to use
+- Super fast
+- Includes `yay` for the AUR
+- Includes desktop environment
 
-![aerOS](https://hewol.github.io/assets/img/aeros-pic.png)
+### You can help us develop aerOS by using the following methods of contact: 
+- [E-mail](mailto:hewol@proton.me)
+- [Discord](https://discord.gg/haTmcAtKCP)
 
-## Other aerOS info/repo
-
-### Maintain Policy List: https://github.com/hewol/aerOS/blob/main/MAINTAIN.md
-### aerOS wallpapers repo: https://github.com/hewol/aeros-wallpapers
-### aerOS Server Edition: https://github.com/hewol/aerOS-se
+### Other aerOS related repositories and information:
+- [Supported releases](https://github.com/hewol/aerOS/blob/main/MAINTAIN.md)
+- [Wallpapers](https://github.com/hewol/aeros-wallpapers)
+- [aerOS Server Edition](https://github.com/hewol/aerOS-se)
 
