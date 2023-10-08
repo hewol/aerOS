@@ -71,7 +71,7 @@ done
 
 test -d work && clean
 
-if [ "$retcod" -eq 0 ]; then
+if [[ "$retcod" -eq 0 ]]; then
     echo "Building finished successfully."
 else
     echo "Building failed."
