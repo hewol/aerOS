@@ -19,6 +19,7 @@ Each Release gets one year of support...
 
 | Version's     | Maintained         |
 | -------       | ------------------ |
+| v1.0 Early Beta 12 (ESB12)   | :white_check_mark: |
 | v1.0 Early Beta 11 (ESB11)   | :white_check_mark: |
 | v1.0 Early Beta 10 (ESB10)   | :white_check_mark: |
 | v1.0 Early Beta 9 (ESB9)   | :x: |
@@ -28,7 +29,7 @@ Each Release gets one year of support...
 | v1.0 Early Beta 5 (ESB5)   | :x: |
 | v1.0 Early Beta 4 (ESB4)   | :x: |
 | v1.0 Early Beta 3 (ESB3)   | :x: |
-| v1.0 Early Beta 2 (ESB2)     | :x: |
+| v1.0 Early Beta 2 (ESB2)   | :x: |
 | v1.0 Early Beta 1 (ESB1)   | :x: |
 
 </details>
