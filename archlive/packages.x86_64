@@ -99,7 +99,10 @@ sof-firmware
 squashfs-tools
 sudo
 syslinux
+systemd
+systemd-libs
 systemd-resolvconf
+systemd-sysvcompat
 tcpdump
 terminus-font
 testdisk
