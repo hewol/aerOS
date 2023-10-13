@@ -11,14 +11,15 @@ Each Release gets one year of support...
 | Version's     | Maintained         |
 | -------       | ------------------ |
 | v1.0     | ? |
-| v1.0 Beta     |  ? |
+| v1.0 Beta     | :white_check_mark: |
 | v1.0 Early Beta     | :white_check_mark: |
 
 <details>
 <summary>Full List</summary>
 
-| Version's     | Maintained         |
+| Versions      | Maintained         |
 | -------       | ------------------ |
+| v1.0 Beta 1 (B1)             | :white_check_mark: |
 | v1.0 Early Beta 12 (ESB12)   | :white_check_mark: |
 | v1.0 Early Beta 11 (ESB11)   | :white_check_mark: |
 | v1.0 Early Beta 10 (ESB10)   | :white_check_mark: |
