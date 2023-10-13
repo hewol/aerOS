@@ -1,0 +1,6 @@
+NAME="aerOS"
+PRETTY_NAME="aerOS"
+ID=arch
+BUILD_ID=v1-early-stage-beta
+HOME_URL="https://hewol.github.io"
+LOGO=aeros-logo
