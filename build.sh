@@ -13,7 +13,7 @@ enable_services() {
         source="$1"
         target="$2"
         printf "Creating symlink for %s\n" "$source"
-        ln -svf "$source" "archlive/airootfs/etc/systemd/system/$target"
+        ln -svf "$source" "archiso/airootfs/etc/systemd/system/$target"
     }
 
     create_symlink "/usr/lib/systemd/system/graphical.target" "default.target"
@@ -55,14 +55,15 @@ while $rerun; do
 
     enable_services
 
-    if ! sudo mkarchiso -v archlive; then
+    if ! sudo mkarchiso -v archiso; then
         echo
         echo -n "Build failed. Do you want to retry the build? [y/N] "
         read -r retry
         if [[ ${retry:0:1} != "y" ]]; then
             rerun=false
+            retcod=1
         else
-            echo
+            :
         fi
     else
         rerun=false

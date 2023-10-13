@@ -1,8 +1,0 @@
-
-
-version: 2
-updates:
-  - package-ecosystem: "docker" 
-    directory: "/archlive" 
-    schedule:
-      interval: "daily"
