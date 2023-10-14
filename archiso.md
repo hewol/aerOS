@@ -1,28 +1,12 @@
-You can build this iso if you have the right version of Archiso.
-
+You can build this iso if you have Archiso.
 Archiso is a package supplied by Arch Linux that will always undergo changes.
 
-You can follow up the versions via this link.
-
+You can ensure the package version with this link:
 https://www.archlinux.org/packages/extra/any/archiso/
 
-We are now using this version
+We are now using this version:
+archiso-version=archiso 73-1
 
-
-archiso-version=archiso 72-1
-
-
-sudo pacman -Q archiso and you will know your version
-
-
-Downgrade to this version via a command in the terminal if you have a higher version.
-
-`sudo downgrade archiso`
-
-and choose the right version. 
-
-Add it to the ignore list of pacman.
-
-
-If you have a lower version then update your system. Check to see if archiso is not added to 
-your /etc/pacman.conf in the list of ignores. Delete it if it is in there. Then update.
+Run `sudo pacman -Q archiso`, and you will know your version.
+If you have a lower version then update your system.
+The required version of Archiso usually should be the current version.
