@@ -270,6 +270,7 @@ git
 #######################################################
 
 ##### aerOS specific packages
+aeros-plymouth
 cifs-utils
 ckbcomp
 cups
@@ -294,7 +295,6 @@ noto-fonts
 noto-fonts-cjk
 p7zip
 pavucontrol
-plymouth
 sane
 simple-scan
 skanlite
