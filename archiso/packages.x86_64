@@ -225,7 +225,7 @@ gdm
 ##### want to have a desktop
 
 gnome
-hyfetch
+neofetch
 
 
 ##### want to add/use the ArcoLinux repos
@@ -270,7 +270,6 @@ git
 #######################################################
 
 ##### aerOS specific packages
-aeros-plymouth
 cifs-utils
 ckbcomp
 cups
@@ -295,6 +294,7 @@ noto-fonts
 noto-fonts-cjk
 p7zip
 pavucontrol
+plymouth
 sane
 simple-scan
 skanlite
