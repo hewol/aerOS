@@ -134,7 +134,7 @@ zsh
 ###             VIA CALAMARES CONFIG                ###
 #######################################################
 
-alci-dwm
+#alci-dwm
 #alci-dwm-nemesis
 alci-calamares
 #alci-calamares-dev
@@ -146,26 +146,21 @@ alci-calamares
 #alci-calamares-config-pure
 #alci-calamares-config-xanmod
 #alci-calamares-config-zen
-xterm
+#xterm
 
 #######################################################
 ###      PACKAGES THAT STAY AFTER INSTALLATION      ###
 #######################################################
 
-#sddm
-bash-completion
 os-prober
-dex
-libxinerama
 make
 xorg-xkill
-xterm
 xorg-xrdb
 mkinitcpio-openswap
 
 ##### you can also use nmtui from the terminal
-#networkmanager
-#network-manager-applet
+networkmanager
+network-manager-applet
 
 #######################################################
 ###                    EXTRAS                       ###
@@ -173,10 +168,9 @@ mkinitcpio-openswap
 
 ##### xorg applications
 
-#xorg-server
+xorg-server
 #xorg-apps
 #neofetch
-
 
 ##### Drivers for graphical cards
 
@@ -186,15 +180,13 @@ mkinitcpio-openswap
 #to have fullscreen
 #virtualbox-guest-utils
 
-#xf86-video-intel
-#xf86-video-amdgpu
-#xf86-video-nouveau
+xf86-video-intel
+xf86-video-amdgpu
+xf86-video-nouveau
 
 #nvidia
 #nvidia-settings
 #nvidia-utils
-
-
 
 ##### lightdm display manager
 
@@ -210,8 +202,6 @@ mkinitcpio-openswap
 
 gdm
 
-
-
 ##### want to have base-devel group
 
 #base-devel
@@ -220,13 +210,10 @@ gdm
 
 #linux-headers
 
-
-
 ##### want to have a desktop
 
 gnome
 neofetch
-
 
 ##### want to add/use the ArcoLinux repos
 
@@ -244,7 +231,6 @@ chaotic-keyring
 #test
 #xcursor-sweet
 
-
 ##### want to add/use your local repo packages
 ##### create your packages and put them in the local repo
 
@@ -255,7 +241,6 @@ chaotic-keyring
 
 #test
 #nemesis-wallpapers
-
 
 #### want have a btrfs format
 #### use alci-calamares-config-btrfs 
@@ -270,6 +255,7 @@ git
 #######################################################
 
 ##### aerOS specific packages
+
 cifs-utils
 ckbcomp
 cups
@@ -288,8 +274,6 @@ lib32-mesa
 lib32-vulkan-icd-loader
 libreoffice-fresh
 mesa
-networkmanager
-network-manager-applet
 noto-fonts
 noto-fonts-cjk
 p7zip
@@ -310,9 +294,7 @@ xf86-input-synaptics
 xf86-input-vmmouse
 xf86-video-ati
 xf86-video-fbdev
-xf86-video-intel
 xf86-video-vmware
-xorg-server
 xorg-xfontsel
 xorg-xinit
 xorg-xinput
