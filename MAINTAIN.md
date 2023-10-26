@@ -20,6 +20,7 @@ This is the list of maintained versions of aerOS, for maintained versions you wi
   
 | Versions                     | Maintained         |
 | ---------------------------- | ------------------ |
+| v1.0 Beta 2 (B2)             | ✅                 |
 | v1.0 Beta 1 (B1)             | ✅                 |
 | v1.0 Early Beta 12 (ESB12)   | ✅                 |
 | v1.0 Early Beta 11 (ESB11)   | ✅                 |
