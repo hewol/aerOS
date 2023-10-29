@@ -1,0 +1,2 @@
+[org/gnome/shell]
+enabled-extensions=['custom-accent-colors@demiskp', 'unblank@sun.wxg@gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com']
