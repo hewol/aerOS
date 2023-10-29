@@ -1,0 +1,23 @@
+<schemalist gettext-domain="gnome-shell-extensions">
+  <schema id="org.gnome.shell.extensions.unblank" path="/org/gnome/shell/extensions/unblank/">
+    <key name="switch" type="b">
+      <default>true</default>
+      <summary>Key to switch unblank</summary>
+      <description>
+      </description>
+    </key>
+    <key name="time" type="i">
+      <default>0</default>
+      <summary>Time to close monitor</summary>
+      <description>
+      </description>
+    </key>
+    <key name="power" type="b">
+      <default>true</default>
+      <summary>Key to switch on power only</summary>
+      <description>
+      </description>
+    </key>
+  </schema>
+</schemalist>
+
