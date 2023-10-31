@@ -1,11 +1,11 @@
 # aerOS
-This is our own Arch Linux Re-spin OS.
+This is our own Arch Linux Respin OS.
 
 ### Benefits to using aerOS:
 - Easy to use
 - Super fast
 - Includes `yay` for the AUR
-- Includes desktop environment
+
 
 ### You can help us develop aerOS by using the following methods of contact: 
 - [E-mail](mailto:hewol@proton.me)
