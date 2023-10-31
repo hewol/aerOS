@@ -1,8 +1,8 @@
 # aerOS
-This is our own Arch Linux Respin OS.
+aerOS is archiso-based Linux Distro.
 
 ### Benefits to using aerOS:
-- Easy to use
+- Made by Hewol and our Community
 - Super fast
 - Includes `yay` for the AUR
 
