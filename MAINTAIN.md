@@ -11,7 +11,7 @@ This is the list of maintained versions of aerOS, for maintained versions you wi
 | Version's           | Maintained         |
 | ------------------- | ------------------ |
 | v1.0                | ❔                 |
-| v1.0 RC          | ✅                 |
+| v1.0 RC             | ✅                 |
 | v1.0 Beta           | ✅                 |
 | v1.0 Early Beta     | ✅                 |
 
@@ -27,7 +27,7 @@ This is the list of maintained versions of aerOS, for maintained versions you wi
 | v1.0 Beta 1 (B1)             | ✅                 |
 | v1.0 Early Beta 12 (ESB12)   | ✅                 |
 | v1.0 Early Beta 11 (ESB11)   | ✅                 |
-| v1.0 Early Beta 10 (ESB10)   | ✅                 |
+| v1.0 Early Beta 10 (ESB10)   | ❌                 |
 | v1.0 Early Beta 9 (ESB9)     | ❌                 |
 | v1.0 Early Beta 8 (ESB8)     | ❌                 |
 | v1.0 Early Beta 7 (ESB7)     | ❌                 |
