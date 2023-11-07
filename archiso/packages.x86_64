@@ -1,3 +1,10 @@
+#######################################################
+###                   Arch Linux                    ###
+#######################################################
+
+# group name: releng-base (not a package/group in a repo)
+# contains a set of packages installed by default in arch linux isos
+
 alsa-utils
 amd-ucode
 arch-install-scripts
@@ -124,7 +131,6 @@ xl2tpd
 zsh
 
 
-# everything above comes from archiso releng folder
 #######################################################
 ###                    ALCI                         ###
 #######################################################
