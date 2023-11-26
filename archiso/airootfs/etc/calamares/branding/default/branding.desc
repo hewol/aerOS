@@ -123,10 +123,10 @@ navigation: widget
 strings:
     productName:         "aerOS Linux Distro"
     shortProductName:    aerOS
-    version:             v1 Beta
-    shortVersion:        v1 Beta
-    versionedName:       aerOS Linux Distro v1 Beta "aerOnar"
-    shortVersionedName:  aerOS v1 Beta
+    version:             v1
+    shortVersion:        v1
+    versionedName:       aerOS Linux Distro v1 "aerOnar"
+    shortVersionedName:  aerOS v1
     bootloaderEntryName: aerOS
 
 # These images are loaded from the branding module directory.
