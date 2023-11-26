@@ -212,11 +212,11 @@ gdm
 
 ##### want to have base-devel group
 
-#base-devel
+base-devel
 
 ##### want to have linux-headers
 
-#linux-headers
+linux-headers
 
 ##### want to have a desktop
 
@@ -329,8 +329,6 @@ gimp
 gnome-disk-utility
 gsfonts
 gutenprint
-kdeconnect
-kdenlive
 lib32-mesa
 lib32-vulkan-icd-loader
 libreoffice-fresh
