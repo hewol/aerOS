@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
 
-set -e
 sudo pacman -Sy archiso --noconfirm
+
+set -e
 clean() {
     echo "Cleaning work directory"
     sudo umount -Rq work || true
     sudo rm -r work
+
+    echo "Cleaning required build packages"
+    sudo pacman -Rns gdm networkmanager network-manager-applet --noconfirm
 }
 
 enable_services() {
@@ -15,8 +19,10 @@ enable_services() {
         printf "Creating symlink for %s\n" "$source"
         ln -svf "$source" "archiso/airootfs/etc/systemd/system/$target"
     }
-    echo "Installing Required Packages"
+    
+    echo "Installing required packages"
     sudo pacman -Sy gdm networkmanager network-manager-applet --noconfirm
+    
     create_symlink "/usr/lib/systemd/system/graphical.target" "default.target"
     create_symlink "/usr/lib/systemd/system/gdm.service" "display-manager.service"
     create_symlink "/usr/lib/systemd/system/NetworkManager.service" "multi-user.target.wants/NetworkManager.service"
@@ -27,6 +33,7 @@ enable_services() {
 install_chaotic_aur() {
     echo "Chaotic AUR is not installed on your system. Do you want to install it? [Y/n] "
     read -r install
+    
     if [[ ${install:0:1} == "y" || ${install:0:1} == "" ]]; then
         echo "Installing chaotic aur"
         sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
