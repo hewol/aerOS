@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 set -e
-
+sudo pacman -Sy archiso --noconfirm
 clean() {
     echo "Cleaning work directory"
     sudo umount -Rq work || true
@@ -15,7 +15,8 @@ enable_services() {
         printf "Creating symlink for %s\n" "$source"
         ln -svf "$source" "archiso/airootfs/etc/systemd/system/$target"
     }
-
+    echo "Installing Required Packages"
+    sudo pacman -Sy gdm networkmanager network-manager-applet --noconfirm
     create_symlink "/usr/lib/systemd/system/graphical.target" "default.target"
     create_symlink "/usr/lib/systemd/system/gdm.service" "display-manager.service"
     create_symlink "/usr/lib/systemd/system/NetworkManager.service" "multi-user.target.wants/NetworkManager.service"

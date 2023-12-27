@@ -327,7 +327,7 @@ foomatic-db
 foomatic-db-engine
 gimp
 gnome-disk-utility
-gsfonts
+gsfontspower-profiles-daemon
 gutenprint
 lib32-mesa
 lib32-vulkan-icd-loader
@@ -360,3 +360,4 @@ xorg-xlsfonts
 xorg-xrandr
 xorg-xwininfo
 yay
+power-profiles-daemon

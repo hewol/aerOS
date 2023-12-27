@@ -2,10 +2,10 @@
 
 ## Maintained Versions
 
-This is the list of maintained versions of aerOS, for maintained versions you will get official support, for unmaintained versions of aerOS you won't get official support, but you will get support from the aerOS community and any rolling release package updates, but you won't get any new features or bug fixes from aerOS. 
+This is the list of maintained versions of aerOS, for maintained versions you will get official support, for unmaintained versions of aerOS you won't get official support, but you will get support from the aerOS community and any rolling release package updates. Latest is always recomended.
 
 * Each ESB (Early Stage Beta) Release will get one month of support.<br>
-* Each Beta Release will get five months of support.<br>
+* Each Beta/RC Release will get five months of support.<br>
 * Each Release will get one year of support.
 
 | Version's           | Maintained         |
@@ -21,6 +21,7 @@ This is the list of maintained versions of aerOS, for maintained versions you wi
   
 | Versions                     | Maintained         |
 | ---------------------------- | ------------------ |
+| v1.0 RC 3 (RC3)              | ✅                 |
 | v1.0 RC 2 (RC2)              | ✅                 |
 | v1.0 RC 1 (RC1)              | ✅                 |
 | v1.0 Beta 3 (B3)             | ✅                 |
