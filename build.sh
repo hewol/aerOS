@@ -8,11 +8,12 @@ clean() {
     sudo umount -Rq work || true
     sudo rm -r work
 
-	if pacman -Qg gnome > /dev/null ; then
+    if pacman -Qg gnome > /dev/null ; then
+        echo "Not removing build packages because GNOME is installed."
+    else
         echo "Cleaning required build packages"
         sudo pacman -Rns gdm networkmanager network-manager-applet --noconfirm
-    else
-        echo "Not removing build packages because GNOME is installed."
+        
     fi
 }
 
