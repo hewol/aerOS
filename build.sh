@@ -2,13 +2,16 @@
 
 sudo pacman -Sy archiso --noconfirm
 
+pacman -Qg gnome > /dev/null
+GNOME_NOT_INSTALLED=$?
+
 set -e
 clean() {
     echo "Cleaning work directory"
     sudo umount -Rq work || true
     sudo rm -r work
 
-    if pacman -Qg gnome > /dev/null ; then
+    if [ $GNOME_NOT_INSTALLED -eq 0 ]; then
         echo "Not removing build packages because GNOME is installed."
     else
         echo "Cleaning required build packages"
