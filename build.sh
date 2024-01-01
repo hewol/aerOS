@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
+pacman -Q gdm networkmanager network-manager-applet > /dev/null
+NOT_INSTALLED=$?
+
 echo "Installing required packages"
 sudo pacman -Sy archiso gdm networkmanager network-manager-applet --noconfirm
-
-pacman -Qg gnome > /dev/null
-GNOME_NOT_INSTALLED=$?
 
 set -e
 clean() {
@@ -12,7 +12,7 @@ clean() {
     sudo umount -Rq work || true
     sudo rm -r work
 
-    if [ $GNOME_NOT_INSTALLED -eq 0 ]; then
+    if [ $NOT_INSTALLED -eq 0 ]; then
         echo "Not removing build packages because GNOME is installed."
     else
         echo "Cleaning required build packages"
