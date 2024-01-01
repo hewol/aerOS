@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-sudo pacman -Sy archiso --noconfirm
+echo "Installing required packages"
+sudo pacman -Sy archiso gdm networkmanager network-manager-applet --noconfirm
 
 pacman -Qg gnome > /dev/null
 GNOME_NOT_INSTALLED=$?
@@ -27,8 +28,7 @@ enable_services() {
         ln -svf "$source" "archiso/airootfs/etc/systemd/system/$target"
     }
     
-    echo "Installing required packages"
-    sudo pacman -Sy gdm networkmanager network-manager-applet --noconfirm
+
     
     create_symlink "/usr/lib/systemd/system/graphical.target" "default.target"
     create_symlink "/usr/lib/systemd/system/gdm.service" "display-manager.service"
