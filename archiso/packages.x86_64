@@ -361,3 +361,6 @@ xorg-xrandr
 xorg-xwininfo
 yay
 power-profiles-daemon
+alsa-utils
+pulseaudio
+pipewire
