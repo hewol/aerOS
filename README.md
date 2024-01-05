@@ -2,8 +2,8 @@
 aerOS is a friendly Arch-based Linux distro built with `archiso`.
 
 ### Benefits to using aerOS:
-- Made by Hewol and our community
-- Super fast
+- Easy to use
+- Customized GNOME
 - Includes `yay` for the AUR
 
 
