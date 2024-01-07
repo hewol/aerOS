@@ -71,6 +71,7 @@ while $rerun; do
     enable_services
 
     if ! sudo mkarchiso -v archiso; then
+        set +e
         echo
         echo -n "Build failed. Do you want to retry the build? [y/N] "
         read -r retry
