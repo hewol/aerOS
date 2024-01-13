@@ -15,5 +15,6 @@ aerOS is a friendly Arch-based Linux distro built with `archiso`.
 - [Supported releases](https://github.com/hewol/aerOS/blob/main/MAINTAIN.md)
 - [Wallpapers](https://github.com/hewol/aeros-wallpapers)
 - [aerOS Core](https://github.com/hewol/aerOS-core)
+- [Requirements](https://github.com/hewol/aerOS/blob/requirements/requirements.md)
 
 
