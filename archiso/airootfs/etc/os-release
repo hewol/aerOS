@@ -1,6 +1,7 @@
-NAME="aerOS"
-PRETTY_NAME="aerOS"
-ID=arch
+NAME=aerOS
+PRETTY_NAME=aerOS
+ID=aerOS
+ID_LIKE=arch
 BUILD_ID=v1
-HOME_URL="https://hewol.github.io"
+HOME_URL=https://hewol.github.io
 LOGO=aeros-logo
