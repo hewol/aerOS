@@ -268,6 +268,7 @@ git
 gnome-disk-utility
 gsfonts
 gutenprint
+jq
 lib32-mesa
 lib32-vulkan-icd-loader
 libreoffice-fresh
