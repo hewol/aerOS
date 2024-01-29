@@ -1,5 +1,5 @@
 {
-  "latest": "v1.1-2",
+  "latest": "v1-1-2",
   "releases": {
     "v1-esb1": {
       "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta",
