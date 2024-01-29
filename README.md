@@ -1,6 +1,5 @@
-aerOS is a friendly Arch-based Linux distro built with `archiso`.
-![image](https://github.com/hewol/aerOS/assets/90315363/e6c87a32-7be1-4a08-9da8-aa1431a88edf)
-
+![aerOS](https://hewol.github.io/assets/img/aeros.png)
+Friendly Arch-based Linux distro built with `archiso`.
 
 ### Benefits to using aerOS:
 - Customized GNOME
