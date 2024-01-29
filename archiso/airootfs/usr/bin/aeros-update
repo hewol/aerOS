@@ -20,7 +20,9 @@ then
     echo
     CHANGELOG=$(jq -r ".releases.$LATEST_VERSION.changelog.[]" /tmp/releases.json)
     RELEASE_URL=$(jq -r ".releases.$LATEST_VERSION.url" /tmp/releases.json)
+    echo "Changelog:"
     printf "$CHANGELOG"
+    echo
     echo
     echo "GitHub release: $RELEASE_URL"
     echo
