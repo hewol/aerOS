@@ -1,0 +1,13 @@
+{
+  "latest": "v1.1-2",
+  "releases": {
+    "v1.1-2": {
+      "url": "https://github.com/hewol/aerOS/releases/v1.1-2",
+      "changelog": [
+        "Changelogs go here",
+        "Make sure to put newlines after everything",
+        "This has not been completed yet"
+      ]
+    }
+  }
+}
