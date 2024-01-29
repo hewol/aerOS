@@ -37,7 +37,19 @@ then
         cp /tmp/os-release /etc/os-release
         cp /tmp/lsb-release /etc/lsb-release
         sudo pacman --config /etc/pacman-update.conf -Syu --noconfirm
-        exit $?
+        EXITCODE=$?
+        if [ "$EXITCODE" != "0" ]
+        then
+            echo "System update failed to install."
+            exit $EXITCODE
+        else
+            echo "System update has been installed, a reboot is required to apply it."
+            read -p "Would you like to reboot? [y/n] " -n 1 -r
+            if [[ $REPLY =~ ^[Yy]$ ]]
+            then
+                sudo sync ; reboot -f
+            fi
+        fi
     fi
 else
     echo "No updates found."
