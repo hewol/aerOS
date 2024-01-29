@@ -1,0 +1,5 @@
+#!/bin/bash
+
+printf "aerOS Update Shell Script\n\n"
+echo "This is not finished yet."
+exit 1
