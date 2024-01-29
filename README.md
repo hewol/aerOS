@@ -1,15 +1,10 @@
-# aerOS
 aerOS is a friendly Arch-based Linux distro built with `archiso`.
+![image](https://github.com/hewol/aerOS/assets/90315363/e6c87a32-7be1-4a08-9da8-aa1431a88edf)
+
 
 ### Benefits to using aerOS:
-- Easy to use
 - Customized GNOME
 - Custom Arch Repos
-
-
-### You can help us develop aerOS by using the following methods of contact: 
-- [E-mail](mailto:hewol@proton.me)
-- [Discord](https://discord.gg/haTmcAtKCP)
 
 ### Other aerOS related repositories and information:
 - [Requirements](https://github.com/hewol/aerOS/blob/master/requirements.md)
