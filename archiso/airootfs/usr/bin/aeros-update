@@ -1,5 +1,45 @@
 #!/bin/bash
 
-printf "aerOS Update Shell Script\n\n"
-echo "This is not finished yet."
-exit 1
+# Download update information
+wget https://raw.githubusercontent.com/hewol/aerOS/master/releases.json -O /tmp/releases.json 2>/dev/null
+wget https://raw.githubusercontent.com/hewol/aerOS/master/archiso/airootfs/etc/os-release -O /tmp/os-release 2>/dev/null
+wget https://raw.githubusercontent.com/hewol/aerOS/master/archiso/airootfs/etc/lsb-release -O /tmp/lsb-release 2>/dev/null
+
+# Get version information
+. /etc/os-release
+CURRENT_VERSION=$BUILD_ID
+LATEST_VERSION=$(jq -r .latest /tmp/releases.json)
+
+echo "aerOS Update Shell Script"
+echo
+
+# Check if updates are available
+if [ "$CURRENT_VERSION" != "$LATEST_VERSION" ]
+then
+    echo "New update! $LATEST_VERSION"
+    echo
+    CHANGELOG=$(jq -r ".releases.$LATEST_VERSION.changelog.[]" /tmp/releases.json)
+    RELEASE_URL=$(jq -r ".releases.$LATEST_VERSION.url" /tmp/releases.json)
+    printf "$CHANGELOG"
+    echo
+    echo "GitHub release: $RELEASE_URL"
+    echo
+    echo "Notes":
+    echo "Some settings and configurations might be restored back to their default state"
+    echo "Please don't turn off your computer while updating, otherwise you will encounter data loss"
+    echo "It is recommended to close all of your applications while updating"
+    echo
+    echo
+    read -p "Would you like to begin the update? [y/n] " -n 1 -r
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+        echo
+        cp /tmp/os-release /etc/os-release
+        cp /tmp/lsb-release /etc/lsb-release
+        sudo pacman --config /etc/pacman-update.conf -Syu --noconfirm
+        exit $?
+    fi
+else
+    echo "No updates found."
+    exit 0
+fi
