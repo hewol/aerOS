@@ -136,14 +136,14 @@
         "Finalized aerOS to be released to everybody"
       ]
     },
-    "v1.1": {
+    "v1-1": {
       "url": "https://github.com/hewol/aerOS/releases/tag/v1-1",
       "changelog": [
         "Added safe graphics option",
         "Fixed sound not initializing"
       ]
     },
-    "v1.1-2": {
+    "v1-1-2": {
       "url": "https://github.com/hewol/aerOS/releases/tag/v1-1-2",
       "changelog": [
         "Added an update script",
