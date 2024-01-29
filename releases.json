@@ -1,12 +1,153 @@
 {
   "latest": "v1.1-2",
   "releases": {
-    "v1.1-2": {
-      "url": "https://github.com/hewol/aerOS/releases/v1.1-2",
+    "v1-esb1": {
+      "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta",
       "changelog": [
-        "Changelogs go here",
-        "Make sure to put newlines after everything",
-        "This has not been completed yet"
+        "Initial release"
+      ]
+    },
+    "v1-esb2": {
+      "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-2",
+      "changelog": [
+        "Fixed video driver failing",
+        "Fixed GNOME crashing"
+      ]
+    },
+    "v1-esb3": {
+      "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-3",
+      "changelog": [
+        "Fixed freezing during boot",
+        "Added Plymouth boot animation"
+      ]
+    },
+    "v1-esb4": {
+      "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-4",
+      "changelog": [
+        "Updated aerOS base system"
+      ]
+    },
+    "v1-esb5": {
+      "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-5",
+      "changelog": [
+        "Fixed ZSH compinit error",
+        "Fixed network connection issues"
+      ]
+    },
+    "v1-esb6": {
+      "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-6",
+      "changelog": [
+        "Fixed Calamares installer"
+      ]
+    },
+    "v1-esb7": {
+      "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-7",
+      "changelog": [
+        "Added a custom GNOME theme",
+        "Made live system load faster",
+        "Made GNOME use Wayland, rather than X11",
+        "The system is generally faster",
+        "Pacman has been improved"
+      ]
+    },
+    "v1-esb8": {
+      "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-8",
+      "changelog": [
+        "Fixed pacman-init service, which makes pacman run correctly",
+        "Added an AUR helper: yay",
+        "Added custom wallpapers",
+        "Removed unknown and conflicting packages"
+      ]
+    },
+    "v1-esb9": {
+      "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-9",
+      "changelog": [
+        "Made untested changes to Calamares and GRUB"
+      ]
+    },
+    "v1-esb10": {
+      "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-10",
+      "changelog": [
+        "Calamares was tweaked to try to fix it, again",
+        "Removed Docker",
+        "Fixed startup manager error",
+        "Removed ALG repo",
+        "SystemD was modified to try and fix the startup manager"
+      ]
+    },
+    "v1-esb11": {
+      "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-11",
+      "changelog": [
+        "Swapped around CPU microcodes"
+      ]
+    },
+    "v1-esb12": {
+      "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-12",
+      "changelog": [
+        "Removed a redundant installer",
+        "Made Calamares accept any password",
+        "Fixed some syntax errors"
+      ]
+    },
+    "v1-b1": {
+      "url": "https://github.com/hewol/aerOS/releases/tag/v1-beta-1",
+      "changelog": [
+        "Rebuilt the whole system base to finally fix installation issues",
+        "Replaced bootloaders with default ones"
+      ]
+    },
+    "v1-b2": {
+      "url": "https://github.com/hewol/aerOS/releases/tag/v1-beta-2",
+      "changelog": [
+        "Added the aerOS logo to Plymouth boot screen",
+        "Login managers were replaced and their X sessions were removed"
+      ]
+    },
+    "v1-b3": {
+      "url": "https://github.com/hewol/aerOS/releases/tag/v1-beta-3",
+      "changelog": [
+        "Package list has been rewritten",
+        "GNOME Web has been replaced with Firefox"
+      ]
+    },
+    "v1-rc1": {
+      "url": "https://github.com/hewol/aerOS/releases/tag/v1-rc1",
+      "changelog": [
+        "Custom GNOME extensions were enabled",
+        "Mkinitcpio warnings were fixed"
+      ]
+    },
+    "v1-rc2": {
+      "url": "https://github.com/hewol/aerOS/releases/tag/v1-rc2",
+      "changelog": [
+        "Removed beta branding"
+      ]
+    },
+    "v1-rc3": {
+      "url": "https://github.com/hewol/aerOS/releases/tag/v1-rc3",
+      "changelog": [
+        "Removed extensions not meant to be added in aerOS at this point in time",
+        "Made sure there is no deprecated repository in the system"
+      ]
+    },
+    "v1": {
+      "url": "https://github.com/hewol/aerOS/releases/tag/v1-0",
+      "changelog": [
+        "Finalized aerOS to be released to everybody"
+      ]
+    },
+    "v1.1": {
+      "url": "https://github.com/hewol/aerOS/releases/tag/v1-1",
+      "changelog": [
+        "Added safe graphics option",
+        "Fixed sound not initializing"
+      ]
+    },
+    "v1.1-2": {
+      "url": "https://github.com/hewol/aerOS/releases/tag/v1-1-2",
+      "changelog": [
+        "Added an update script",
+        "Updated aerOS base system"
       ]
     }
   }
