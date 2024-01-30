@@ -12,7 +12,7 @@ wget https://raw.githubusercontent.com/hewol/aerOS/master/archiso/airootfs/etc/o
 wget https://raw.githubusercontent.com/hewol/aerOS/master/archiso/airootfs/etc/lsb-release -O /tmp/lsb-release 2>/dev/null
 
 # Get version information
-. /etc/os-release
+source /etc/os-release
 CURRENT_VERSION=$BUILD_ID
 LATEST_VERSION=$(jq -r .latest /tmp/releases.json)
 
@@ -27,7 +27,7 @@ then
     CHANGELOG=$(jq -r ".releases.$LATEST_VERSION.changelog.[]" /tmp/releases.json)
     RELEASE_URL=$(jq -r ".releases.$LATEST_VERSION.url" /tmp/releases.json)
     echo "Changelog:"
-    printf "$CHANGELOG"
+    printf "%s" "$CHANGELOG"
     echo
     echo
     echo "GitHub release: $RELEASE_URL"
