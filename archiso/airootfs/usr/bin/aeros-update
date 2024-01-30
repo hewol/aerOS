@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Test if we are root and restart the script if we are not
+if [[ $EUID -ne 0 ]];
+then
+    exec sudo /bin/bash "$0" "$@"
+fi
+
 # Download update information
 wget https://raw.githubusercontent.com/hewol/aerOS/master/releases.json -O /tmp/releases.json 2>/dev/null
 wget https://raw.githubusercontent.com/hewol/aerOS/master/archiso/airootfs/etc/os-release -O /tmp/os-release 2>/dev/null
