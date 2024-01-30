@@ -291,6 +291,7 @@ unarchiver
 unrar
 unzip
 vulkan-icd-loader
+wget
 xf86-input-evdev
 xf86-input-libinput
 xf86-input-synaptics
