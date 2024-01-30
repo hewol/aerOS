@@ -2,14 +2,20 @@
 
 ## Maintained Versions
 
-This is the list of maintained versions of aerOS, for maintained versions you will get official support, for unmaintained versions of aerOS you won't get official support, but you will get support from the aerOS community and any rolling release package updates. Latest is always recomended.
+This is the list of aerOS releases.<br>
+For maintained releases you will get official support.<br>
+For unmaintained versions of aerOS you won't get that, but you can still get community support and any package updates from Arch Linux.<br>
+It is always recommended to use the current release.
 
-* Each ESB (Early Stage Beta) Release will get one month of support.<br>
+* Each ESB (Early Stage Beta) release will get one month of support.<br>
 <sub><sup>No ESB release is supported anymore, and they are very broken. Please upgrade.</sub></sup>
-* Each Beta/RC Release will get five months of support.<br>
+* Each Beta or RC release will get five months of support.<br>
 <sub><sup>We recommend to upgrade from a Beta/RC to a full release to get every feature and full support.</sub></sup>
-* Each Release will get one year of support.<br>
+* Each major release will get one year of support.<br>
 <sub><sup>This is what you should use to get every feature and full support.</sub></sup>
+
+### Supported Release Types
+Do not use any release types marked in ❌.
 
 | Versions            | Maintained          | EOL Date            |
 | ------------------- | ------------------- | ------------------- | 
@@ -18,10 +24,9 @@ This is the list of maintained versions of aerOS, for maintained versions you wi
 | v1.0 Beta           | ✅                 | 03/29/2024          |
 | v1.0 Early Beta     | ❌                 | 11/09/2023          |
 
-## Full List
-<details>
-<summary>Supported Releases</summary>
-  
+### Supported Releases
+Do not use the releases marked in ❌.
+
 | Versions                     | Maintained          | EOL Date            |
 | ---------------------------- | ------------------- | ------------------- | 
 | v1.1 Update 2 (v1.1-2)       | ✅                 | 01/30/2025          |
@@ -45,4 +50,3 @@ This is the list of maintained versions of aerOS, for maintained versions you wi
 | v1.0 Early Beta 3 (ESB3)     | ❌                 | 07/24/2023          |
 | v1.0 Early Beta 2 (ESB2)     | ❌                 | 07/02/2023          |
 | v1.0 Early Beta 1 (ESB1)     | ❌                 | 06/26/2023          |
-</details>
