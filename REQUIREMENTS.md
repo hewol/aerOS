@@ -8,7 +8,7 @@ To run aerOS smoothly, you should meet these requirements:
 * Any modern NVIDIA or AMD GPU
 
 ### Minimum requirements
-* 2GB or more RAM
+* 2 GB or more RAM
 * At least a Pentium 4
 * 11 GB or more storage
 * At least an Intel iGPU
