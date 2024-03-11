@@ -1,5 +1,5 @@
 {
-  "latest": "v1_1_2",
+  "latest": "v1_5",
   "releases": {
     "v1_esb1": {
       "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta",
@@ -148,6 +148,12 @@
       "changelog": [
         "Added an update script",
         "Updated aerOS base system"
+      ]
+    },
+    "v1_5": {
+      "url": null,
+      "changelog": [
+        "Upgraded to GNOME 46"
       ]
     }
   }
