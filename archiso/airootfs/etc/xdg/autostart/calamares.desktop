@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=calamares
+Comment=Start aerOS Installer
+Exec=/usr/bin/calamares
+StartupNotify=false
+Terminal=false
+Hidden=false
