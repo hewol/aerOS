@@ -36,8 +36,8 @@ Do not use the releases marked in ❌.
 | v1.0 RC 2 (RC2)              | ✅                 | 04/22/2024          |
 | v1.0 RC 1 (RC1)              | ✅                 | 04/04/2024          |
 | v1.0 Beta 3 (B3)             | ✅                 | 03/29/2024          |
-| v1.0 Beta 2 (B2)             | ✅                 | 03/15/2024          |
-| v1.0 Beta 1 (B1)             | ✅                 | 03/14/2024          |
+| v1.0 Beta 2 (B2)             | ❌                 | 03/15/2024          |
+| v1.0 Beta 1 (B1)             | ❌                 | 03/14/2024          |
 | v1.0 Early Beta 12 (ESB12)   | ❌                 | 11/09/2023          |
 | v1.0 Early Beta 11 (ESB11)   | ❌                 | 11/06/2023          |
 | v1.0 Early Beta 10 (ESB10)   | ❌                 | 11/03/2023          |
