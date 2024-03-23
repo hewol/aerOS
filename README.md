@@ -5,6 +5,6 @@
 - Customized GNOME interface
 - Custom Arch repositories
 
-[Requirements](https://github.com/hewol/aerOS/blob/master/requirements.md) - [Supported releases](https://github.com/hewol/aerOS/blob/main/MAINTAIN.md) - [Wallpapers](https://github.com/hewol/aeros-wallpapers)
+[Requirements](https://github.com/hewol/aerOS/blob/master/REQUIREMENTS.md) - [Supported releases](https://github.com/hewol/aerOS/blob/main/MAINTAIN.md) - [Wallpapers](https://github.com/hewol/aeros-wallpapers)
 
 Have a weak PC? Try out [aerOS Core](https://github.com/hewol/aerOS-core).

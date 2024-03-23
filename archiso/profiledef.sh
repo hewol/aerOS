@@ -29,4 +29,6 @@ file_permissions=(
   ["/usr/local/bin/get-nemesis-on-alci"]="0:0:755"
   ["/usr/local/bin/fix-keys"]="0:0:755"
   ["/etc/rc.local"]="0:0:755"
+  ["/usr/bin/aeros-update"]="0:0:755"
+  ["/usr/bin/patch-grub"]="0:0:755"
 )
