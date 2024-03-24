@@ -1,9 +1,12 @@
 [Desktop Entry]
-Encoding=UTF-8
 Type=Application
-Name=calamares
-Comment=Start aerOS Installer
-Exec=/usr/bin/calamares
-StartupNotify=false
+Version=1.0
+Name=Install aerOS
+GenericName=Live Installer
+Comment=Install the operating system to disk
+Exec=/usr/bin/calamares_polkit %f
+Icon=calamares
 Terminal=false
-Hidden=false
+StartupNotify=true
+Type=Application
+Categories=Qt;System;
