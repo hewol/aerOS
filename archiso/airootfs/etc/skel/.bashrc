@@ -7,8 +7,4 @@
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
-
-########
-#ALCI
-########
-alias evb='sudo systemctl enable --now vboxservice.service'
+QT_STYLE_OVERRIDE=adwaita

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 pacman -Q gdm networkmanager network-manager-applet > /dev/null
 NOT_INSTALLED=$?
@@ -38,22 +38,22 @@ enable_services() {
 }
 
 install_chaotic_aur() {
-    echo "Chaotic AUR is not installed on your system. Do you want to install it? [Y/n] "
+    echo "Chaotic AUR is not installed on your system. Do you want to install it? [y/n] "
     read -r install
     
     if [[ ${install:0:1} == "y" || ${install:0:1} == "" ]]; then
-        echo "Installing chaotic aur"
+        echo "Installing Chaotic AUR"
         sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
         sudo pacman-key --lsign-key 3056513887B78AEB
         sudo pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
         if [ -f /etc/pacman.d/chaotic-mirrorlist ]; then
-            echo "Successfully installed chaotic aur ... continuing with the build."
+            echo "Successfully installed Chaotic AUR, continuing with the build."
         else
-            echo "Chaotic aur mirrorlist not found .. aborting build."
+            echo "Chaotic AUR mirrorlist not found, aborting build."
             rerun=false
         fi
     else
-        echo "Chaotic aur mirrorlist not found .. aborting build."
+        echo "Chaotic AUR mirrorlist not found, aborting build."
         rerun=false
     fi
 }
@@ -73,7 +73,7 @@ while $rerun; do
     if ! sudo mkarchiso -v archiso; then
         set +e
         echo
-        echo -n "Build failed. Do you want to retry the build? [y/N] "
+        echo -n "Build failed, do you want to retry the build? [y/n] "
         read -r retry
         if [[ ${retry:0:1} != "y" ]]; then
             rerun=false
