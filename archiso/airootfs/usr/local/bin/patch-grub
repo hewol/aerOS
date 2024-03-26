@@ -1,27 +1,33 @@
-#!/bin/sh
+#!/bin/bash
 
 # Get the root directory
 ROOT=$1
-
+OSPROBER="$(os-prober)"
+if [[ "$OSPROBER" ]]; then
+  SHIFT=3
+else
+  SHIFT=0
+fi
+  
 # Take a backup and change to a temporary directory
 cp $ROOT/boot/grub/grub.cfg $ROOT/boot/grub/grub.cfg.bak
 cd /tmp
 
 # Remove advanced options
-sed -i "109,127d" $ROOT/boot/grub/grub.cfg
+sed -i "$((109+$SHIFT)),$((127+$SHIFT))d" $ROOT/boot/grub/grub.cfg
 
 # Save boot option syntax
-sed -n "92,108p" $ROOT/boot/grub/grub.cfg > boot.option
+sed -n "$((92+$SHIFT)),$((108+SHIFT))p" $ROOT/boot/grub/grub.cfg > boot.option
 
 # Copy the boot options
-sed -i "109r boot.option" $ROOT/boot/grub/grub.cfg
-sed -i "127r boot.option" $ROOT/boot/grub/grub.cfg
+sed -i "$((109+$SHIFT))r boot.option" $ROOT/boot/grub/grub.cfg
+sed -i "$((127+$SHIFT))r boot.option" $ROOT/boot/grub/grub.cfg
 
 # Rename the boot options
-sed -i "92s/aerOS Linux/aerOS/g" $ROOT/boot/grub/grub.cfg
-sed -i "110s/aerOS Linux/aerOS with safe graphics driver/g" $ROOT/boot/grub/grub.cfg
-sed -i "128s/aerOS Linux/aerOS in TTY mode/g" $ROOT/boot/grub/grub.cfg
+sed -i "$((92+$SHIFT))s/aerOS Linux/aerOS/g" $ROOT/boot/grub/grub.cfg
+sed -i "$((110+SHIFT))s/aerOS Linux/aerOS with safe graphics driver/g" $ROOT/boot/grub/grub.cfg
+sed -i "$((SHIFT+128))s/aerOS Linux/aerOS in TTY mode/g" $ROOT/boot/grub/grub.cfg
 
 # Change kernel parameters for newly created boot options
-sed -i "123s/quiet splash/quiet splash nomodeset/g" $ROOT/boot/grub/grub.cfg
-sed -i "141s/quiet splash loglevel=3/loglevel=3 \$vt_handoff 3/g" $ROOT/boot/grub/grub.cfg
+sed -i "$((SHIFT+123))s/quiet splash/quiet splash nomodeset/g" $ROOT/boot/grub/grub.cfg
+sed -i "$((SHIFT+141))s/quiet splash loglevel=3/loglevel=3 \$vt_handoff 3/g" $ROOT/boot/grub/grub.cfg
