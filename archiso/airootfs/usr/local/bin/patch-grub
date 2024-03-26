@@ -2,6 +2,8 @@
 
 # Get the root directory
 ROOT=$1
+
+# Detemine shift-lines amount
 OSPROBER="$(os-prober)"
 if [[ "$OSPROBER" ]]; then
   SHIFT=3
@@ -31,3 +33,13 @@ sed -i "$((SHIFT+128))s/aerOS Linux/aerOS in TTY mode/g" $ROOT/boot/grub/grub.cf
 # Change kernel parameters for newly created boot options
 sed -i "$((SHIFT+123))s/quiet splash/quiet splash nomodeset/g" $ROOT/boot/grub/grub.cfg
 sed -i "$((SHIFT+141))s/quiet splash loglevel=3/loglevel=3 \$vt_handoff 3/g" $ROOT/boot/grub/grub.cfg
+
+# Check for syntax errors and revert if found
+if grub-script-check /boot/grub/grub.cfg; then
+  echo "GRUB patched successfully."
+  exit 0
+else
+  echo "Failed in patching GRUB."
+  cp $ROOT/boot/grub/grub.cfg.bak $ROOT/boot/grub/grub.cfg
+  exit 1
+fi
