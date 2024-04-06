@@ -8,8 +8,6 @@ fi
 
 # Download update information
 wget https://raw.githubusercontent.com/hewol/aerOS/master/releases.json -O /tmp/releases.json 2>/dev/null
-wget https://raw.githubusercontent.com/hewol/aerOS/master/archiso/airootfs/etc/os-release -O /tmp/os-release 2>/dev/null
-wget https://raw.githubusercontent.com/hewol/aerOS/master/archiso/airootfs/etc/lsb-release -O /tmp/lsb-release 2>/dev/null
 
 # Get version information
 source /etc/os-release
@@ -46,12 +44,14 @@ then
     then
         set -e
         echo
-        pv update.tar.gz | tar --xattrs-include="*.*" --numeric-owner --strip-components=1 -C / -xpz
+        wget $UPDATE_URL -O ~/update.tar.gz
+        pv ~/update.tar.gz | tar --xattrs-include="*.*" --numeric-owner --strip-components=1 -C / -xpz
         mkinitcpio -P
         genfstab -U -p / > /etc/fstab
         grub-mkconfig -o /boot/grub/grub.cfg
         ( cd /var/lib/pacman/local && ls | sort | awk -v re='(.*)-[^-]*-[^-]*$' 'match($0, re, a) { if (!(a[1] in p)){p[a[1]]} else {print} }' | xargs rm -rf )
         pacman --config=/etc/pacman-update.conf -Syu --overwrite="*" --noconfirm
+        rm -rf ~/update.tar.gz
 
         echo "System update has been installed, a reboot is required to apply it."
         read -p "Would you like to reboot? [y/n] " -n 1 -r
