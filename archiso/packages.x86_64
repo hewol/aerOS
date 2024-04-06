@@ -139,7 +139,8 @@ zsh
 ###             VIA CALAMARES CONFIG                ###
 #######################################################
 
-alci-calamares
+aeros-calamares-config
+calamares-git
 
 #######################################################
 ###      PACKAGES THAT STAY AFTER INSTALLATION      ###

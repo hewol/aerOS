@@ -46,9 +46,6 @@ export default class CustomAccentColors extends Extension {
         this.settings.connect('changed::theme-shell', () => {
             this.updateShellTheming(this.settings.get_boolean('theme-shell'));
         });
-        this.settings.connect('changed::theme-icons', () => {
-            this.updateIconTheming(this.settings.get_boolean('theme-icons'));
-        })
 
         this.applyAccentColor(true);
     }
@@ -123,6 +120,13 @@ export default class CustomAccentColors extends Extension {
 
     applyAccentColor(apply) {
         this.accentColor = this.settings.get_string('accent-color');
+
+        /* Handle legacy values */
+        if (this.accentColor == 'blue' || this.accentColor == 'magenta' || this.accentColor == 'gray') {
+            this.settings.set_string('accent-color', 'default');
+            this.accentColor = this.settings.get_string('accent-color');
+        }
+
         this.updateGtkTheming('gtk-4.0', apply);
         if (this.settings.get_boolean('theme-flatpak')) {
             this.updateFlatpakTheming(apply);
@@ -133,17 +137,14 @@ export default class CustomAccentColors extends Extension {
         if (apply && this.settings.get_boolean('theme-shell')) {
             this.updateShellTheming(true);
         }
-        if (this.settings.get_boolean('theme-icons')) {
-            this.updateIconTheming(apply);
-        }
     }
 
     updateGtkTheming(gtkVer, apply) {
         const meDir = this.path;
-        const homeDir = GLib.get_home_dir();
-        const gtkFile = Gio.File.new_for_path(homeDir + '/.config/' + gtkVer + '/gtk.css');
+        const configDir = GLib.get_user_config_dir();
+        const gtkFile = Gio.File.new_for_path(configDir + '/' + gtkVer + '/gtk.css');
         if (apply && this.accentColor != 'default') {
-            const gtkDir = Gio.File.new_for_path(homeDir + '/.config/' + gtkVer);
+            const gtkDir = Gio.File.new_for_path(configDir + '/' + gtkVer);
             if (!gtkDir.query_exists(null)) {
                 this.createDir(gtkDir.get_path());
             }
@@ -155,7 +156,7 @@ export default class CustomAccentColors extends Extension {
     }
 
     updateFlatpakTheming(apply) {
-        if (apply) {
+        if (apply && this.accentColor != 'default') {
             try {
                 GLib.spawn_command_line_async(
                     'flatpak override --user --filesystem=xdg-config/gtk-4.0:ro --filesystem=xdg-config/gtk-3.0:ro'
@@ -176,9 +177,9 @@ export default class CustomAccentColors extends Extension {
 
     updateShellTheming(apply) {
         const meDir = this.path;
-        const homeDir = GLib.get_home_dir();
+        const dataDir = GLib.get_user_data_dir();
         let shellThemeDir = Gio.File.new_for_path(
-            homeDir + '/.local/share/themes/Custom-Accent-Colors'
+            dataDir + '/themes/Custom-Accent-Colors'
         );
         if (apply && this.accentColor != 'default') {
             if (!shellThemeDir.query_exists(null)) {
@@ -208,38 +209,5 @@ export default class CustomAccentColors extends Extension {
             this.deleteFileDir(shellThemeDir.get_path() + '/gnome-shell');
             this.deleteFileDir(shellThemeDir.get_path());
         }
-    }
-
-    updateIconTheming(apply) {
-        const iconThemeSetting = new Gio.Settings({
-            schema: 'org.gnome.desktop.interface',
-        });
-        const meDir = this.path;
-        const homeDir = GLib.get_home_dir();
-        const iconThemeDir = Gio.File.new_for_path(homeDir + '/.local/share/icons/');
-        const iconSymLink = Gio.File.new_for_path(homeDir + '/.local/share/icons/Custom-Accent-Icons');
-        if (iconSymLink.query_exists(null)){
-            try {
-                iconSymLink.delete(null);
-            } catch(e) {
-                console.error(e);
-            }
-        }
-        if (apply && this.accentColor != 'default' && this.accentColor != 'blue') {
-            if (!iconThemeDir.query_exists(null)) {
-                this.createDir(iconThemeDir.get_path());
-            }
-            let iconTheme = Gio.File.new_for_path(
-                meDir +
-                '/resources/' +
-                this.accentColor +
-                '/custom-icon-colors'
-            );
-            iconSymLink.make_symbolic_link(iconTheme.get_path(), null);
-            iconThemeSetting.set_string('icon-theme', 'Custom-Accent-Icons');
-        } else {
-            iconThemeSetting.set_string('icon-theme', 'Adwaita');
-        }
-        iconThemeSetting.apply();
     }
 }
