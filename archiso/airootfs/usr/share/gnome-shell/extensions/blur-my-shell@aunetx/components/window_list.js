@@ -46,8 +46,7 @@ export const WindowListBlur = class WindowListBlur {
 
             let blur_effect = new Shell.BlurEffect({
                 name: 'window-list-blur',
-                radius: 
-                    (this.settings.window_list.CUSTOMIZE
+                radius: (this.settings.window_list.CUSTOMIZE
                         ? this.settings.window_list.SIGMA
                         : this.settings.SIGMA) * 2,
                 brightness: this.settings.window_list.CUSTOMIZE

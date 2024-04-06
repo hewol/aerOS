@@ -1,13 +1,14 @@
-.overview-tile {
-  margin: 0px;
-  padding: 0px;
-  border: 0px; }
-
-.overview-tile .overview-icon, .show-apps .overview-icon {
+.dash-item-container .overview-tile .overview-icon,
+.dash-item-container .show-apps .overview-icon {
   background-color: rgba(255, 255, 255, 0); }
 
-.overview-tile:hover .overview-icon, .overview-tile.focused .overview-icon, .show-apps:hover .overview-icon {
-  background-color: rgba(238, 238, 236, 0.2); }
+.dash-item-container .overview-tile:hover .overview-icon,
+.dash-item-container .overview-tile.focused .overview-icon,
+.dash-item-container .show-apps:hover .overview-icon {
+  background-color: rgba(238, 238, 238, 0.2); }
+
+.dash-item-container .overview-tile .app-grid-running-dot {
+  margin-bottom: 8px; }
 
 #dashtodockContainer.bottom #dash {
   margin: 0px;
@@ -58,7 +59,7 @@
     #dashtodockContainer.bottom #dash .dash-item-container .app-well-app.running .overview-icon {
       background-image: none; }
     #dashtodockContainer.bottom #dash .dash-item-container .app-well-app.focused .overview-icon {
-      background-color: rgba(238, 238, 236, 0.2); }
+      background-color: rgba(238, 238, 238, 0.2); }
     #dashtodockContainer.bottom #dash .dash-item-container .app-well-app .app-well-app-running-dot {
       margin-bottom: 2px; }
     #dashtodockContainer.bottom #dash .dash-item-container > StButton {
@@ -126,7 +127,7 @@
     #dashtodockContainer.bottom.shrink #dash .dash-item-container .app-well-app.running .overview-icon {
       background-image: none; }
     #dashtodockContainer.bottom.shrink #dash .dash-item-container .app-well-app.focused .overview-icon {
-      background-color: rgba(238, 238, 236, 0.2); }
+      background-color: rgba(238, 238, 238, 0.2); }
     #dashtodockContainer.bottom.shrink #dash .dash-item-container .app-well-app .app-well-app-running-dot {
       margin-bottom: 2px; }
     #dashtodockContainer.bottom.shrink #dash .dash-item-container > StButton {
@@ -202,7 +203,7 @@
     #dashtodockContainer.bottom.extended #dash .dash-item-container .app-well-app.running .overview-icon {
       background-image: none; }
     #dashtodockContainer.bottom.extended #dash .dash-item-container .app-well-app.focused .overview-icon {
-      background-color: rgba(238, 238, 236, 0.2); }
+      background-color: rgba(238, 238, 238, 0.2); }
     #dashtodockContainer.bottom.extended #dash .dash-item-container .app-well-app .app-well-app-running-dot {
       margin-bottom: 2px; }
     #dashtodockContainer.bottom.extended #dash .dash-item-container > StButton {
@@ -278,7 +279,7 @@
     #dashtodockContainer.bottom.extended.shrink #dash .dash-item-container .app-well-app.running .overview-icon {
       background-image: none; }
     #dashtodockContainer.bottom.extended.shrink #dash .dash-item-container .app-well-app.focused .overview-icon {
-      background-color: rgba(238, 238, 236, 0.2); }
+      background-color: rgba(238, 238, 238, 0.2); }
     #dashtodockContainer.bottom.extended.shrink #dash .dash-item-container .app-well-app .app-well-app-running-dot {
       margin-bottom: 2px; }
     #dashtodockContainer.bottom.extended.shrink #dash .dash-item-container > StButton {
@@ -353,7 +354,7 @@
     #dashtodockContainer.top #dash .dash-item-container .app-well-app.running .overview-icon {
       background-image: none; }
     #dashtodockContainer.top #dash .dash-item-container .app-well-app.focused .overview-icon {
-      background-color: rgba(238, 238, 236, 0.2); }
+      background-color: rgba(238, 238, 238, 0.2); }
     #dashtodockContainer.top #dash .dash-item-container .app-well-app .app-well-app-running-dot {
       margin-bottom: 2px; }
     #dashtodockContainer.top #dash .dash-item-container > StButton {
@@ -421,7 +422,7 @@
     #dashtodockContainer.top.shrink #dash .dash-item-container .app-well-app.running .overview-icon {
       background-image: none; }
     #dashtodockContainer.top.shrink #dash .dash-item-container .app-well-app.focused .overview-icon {
-      background-color: rgba(238, 238, 236, 0.2); }
+      background-color: rgba(238, 238, 238, 0.2); }
     #dashtodockContainer.top.shrink #dash .dash-item-container .app-well-app .app-well-app-running-dot {
       margin-bottom: 2px; }
     #dashtodockContainer.top.shrink #dash .dash-item-container > StButton {
@@ -497,7 +498,7 @@
     #dashtodockContainer.top.extended #dash .dash-item-container .app-well-app.running .overview-icon {
       background-image: none; }
     #dashtodockContainer.top.extended #dash .dash-item-container .app-well-app.focused .overview-icon {
-      background-color: rgba(238, 238, 236, 0.2); }
+      background-color: rgba(238, 238, 238, 0.2); }
     #dashtodockContainer.top.extended #dash .dash-item-container .app-well-app .app-well-app-running-dot {
       margin-bottom: 2px; }
     #dashtodockContainer.top.extended #dash .dash-item-container > StButton {
@@ -573,7 +574,7 @@
     #dashtodockContainer.top.extended.shrink #dash .dash-item-container .app-well-app.running .overview-icon {
       background-image: none; }
     #dashtodockContainer.top.extended.shrink #dash .dash-item-container .app-well-app.focused .overview-icon {
-      background-color: rgba(238, 238, 236, 0.2); }
+      background-color: rgba(238, 238, 238, 0.2); }
     #dashtodockContainer.top.extended.shrink #dash .dash-item-container .app-well-app .app-well-app-running-dot {
       margin-bottom: 2px; }
     #dashtodockContainer.top.extended.shrink #dash .dash-item-container > StButton {
@@ -644,7 +645,7 @@
     #dashtodockContainer.left #dash .dash-item-container .app-well-app.running .overview-icon {
       background-image: none; }
     #dashtodockContainer.left #dash .dash-item-container .app-well-app.focused .overview-icon {
-      background-color: rgba(238, 238, 236, 0.2); }
+      background-color: rgba(238, 238, 238, 0.2); }
     #dashtodockContainer.left #dash .dash-item-container .app-well-app .app-well-app-running-dot {
       margin-bottom: 2px; }
     #dashtodockContainer.left #dash .dash-item-container > StButton {
@@ -708,7 +709,7 @@
     #dashtodockContainer.left.shrink #dash .dash-item-container .app-well-app.running .overview-icon {
       background-image: none; }
     #dashtodockContainer.left.shrink #dash .dash-item-container .app-well-app.focused .overview-icon {
-      background-color: rgba(238, 238, 236, 0.2); }
+      background-color: rgba(238, 238, 238, 0.2); }
     #dashtodockContainer.left.shrink #dash .dash-item-container .app-well-app .app-well-app-running-dot {
       margin-bottom: 2px; }
     #dashtodockContainer.left.shrink #dash .dash-item-container > StButton {
@@ -780,7 +781,7 @@
     #dashtodockContainer.left.extended #dash .dash-item-container .app-well-app.running .overview-icon {
       background-image: none; }
     #dashtodockContainer.left.extended #dash .dash-item-container .app-well-app.focused .overview-icon {
-      background-color: rgba(238, 238, 236, 0.2); }
+      background-color: rgba(238, 238, 238, 0.2); }
     #dashtodockContainer.left.extended #dash .dash-item-container .app-well-app .app-well-app-running-dot {
       margin-bottom: 2px; }
     #dashtodockContainer.left.extended #dash .dash-item-container > StButton {
@@ -852,7 +853,7 @@
     #dashtodockContainer.left.extended.shrink #dash .dash-item-container .app-well-app.running .overview-icon {
       background-image: none; }
     #dashtodockContainer.left.extended.shrink #dash .dash-item-container .app-well-app.focused .overview-icon {
-      background-color: rgba(238, 238, 236, 0.2); }
+      background-color: rgba(238, 238, 238, 0.2); }
     #dashtodockContainer.left.extended.shrink #dash .dash-item-container .app-well-app .app-well-app-running-dot {
       margin-bottom: 2px; }
     #dashtodockContainer.left.extended.shrink #dash .dash-item-container > StButton {
@@ -923,7 +924,7 @@
     #dashtodockContainer.right #dash .dash-item-container .app-well-app.running .overview-icon {
       background-image: none; }
     #dashtodockContainer.right #dash .dash-item-container .app-well-app.focused .overview-icon {
-      background-color: rgba(238, 238, 236, 0.2); }
+      background-color: rgba(238, 238, 238, 0.2); }
     #dashtodockContainer.right #dash .dash-item-container .app-well-app .app-well-app-running-dot {
       margin-bottom: 2px; }
     #dashtodockContainer.right #dash .dash-item-container > StButton {
@@ -987,7 +988,7 @@
     #dashtodockContainer.right.shrink #dash .dash-item-container .app-well-app.running .overview-icon {
       background-image: none; }
     #dashtodockContainer.right.shrink #dash .dash-item-container .app-well-app.focused .overview-icon {
-      background-color: rgba(238, 238, 236, 0.2); }
+      background-color: rgba(238, 238, 238, 0.2); }
     #dashtodockContainer.right.shrink #dash .dash-item-container .app-well-app .app-well-app-running-dot {
       margin-bottom: 2px; }
     #dashtodockContainer.right.shrink #dash .dash-item-container > StButton {
@@ -1059,7 +1060,7 @@
     #dashtodockContainer.right.extended #dash .dash-item-container .app-well-app.running .overview-icon {
       background-image: none; }
     #dashtodockContainer.right.extended #dash .dash-item-container .app-well-app.focused .overview-icon {
-      background-color: rgba(238, 238, 236, 0.2); }
+      background-color: rgba(238, 238, 238, 0.2); }
     #dashtodockContainer.right.extended #dash .dash-item-container .app-well-app .app-well-app-running-dot {
       margin-bottom: 2px; }
     #dashtodockContainer.right.extended #dash .dash-item-container > StButton {
@@ -1131,7 +1132,7 @@
     #dashtodockContainer.right.extended.shrink #dash .dash-item-container .app-well-app.running .overview-icon {
       background-image: none; }
     #dashtodockContainer.right.extended.shrink #dash .dash-item-container .app-well-app.focused .overview-icon {
-      background-color: rgba(238, 238, 236, 0.2); }
+      background-color: rgba(238, 238, 238, 0.2); }
     #dashtodockContainer.right.extended.shrink #dash .dash-item-container .app-well-app .app-well-app-running-dot {
       margin-bottom: 2px; }
     #dashtodockContainer.right.extended.shrink #dash .dash-item-container > StButton {
@@ -1178,10 +1179,55 @@
   background: #303030; }
 
 #dashtodockContainer.dashtodock .progress-bar {
-  /* Customization of the progress bar style, e.g.:
-      -progress-bar-background: rgba(0.8, 0.8, 0.8, 1);
-      -progress-bar-border: rgba(0.9, 0.9, 0.9, 1);
-    */ }
+  /* Customization of the progress bar style. The possible elements
+     * are:
+     *
+     * -XXXXXX-YYYYYY: plain color
+     * -XXXXXX-YYYYYY-color-start: start color for gradient
+     * -XXXXXX-YYYYYY-color-end: end color for gradient
+     * -XXXXXX-YYYYYY-offset-start: offset for start color in gradient (0-1)
+     * -XXXXXX-YYYYYY-offset-end: offset for end color in gradient (0-1)
+     * -XXXXXX-line-width: width value for the line used for the border
+     *
+     * XXXXXX can be either
+     *
+     *    progress-bar-track: the "track" over which the progress bar is shown
+     *    progress-bar: the progress bar itself
+     *
+     * YYYYYY can be either
+     *
+     *    background: for the background color
+     *    border: for the border color
+     *
+     * plain color entries have priority over gradients, so if both are set for
+     * an element, the plain color will be used.
+     *
+     * Examples:
+     *
+     *  -progress-bar-track-background: rgba(128, 128, 0, 0.75);
+     *  -progress-bar-track-border: rgba(0, 0, 255, 0.25);
+     *
+     *  -progress-bar-background: rgba(0, 204, 204, 1);
+     *  -progress-bar-border: rgba(230, 230, 230, 1);
+     *
+     * Default values when these entries aren't set are equivalent to:
+     *   -progress-bar-track-background-color-start: 64, 64, 64, 1.0
+     *   -progress-bar-track-background-color-end: 89, 89, 89, 1.0
+     *   -progress-bar-track-background-start-offset: 0.4
+     *   -progress-bar-track-background-end-offset: 0.9
+     *   -progress-bar-track-border-color-start: 128, 128, 128, 0.1
+     *   -progress-bar-track-border-color-end: 89, 89, 89, 0.4
+     *   -progress-bar-track-border-start-offset: 0.5
+     *   -progress-bar-track-border-end-offset: 0.9
+     *   -progress-bar-track-line-width: 1
+     *   -progress-bar-background: 204, 204, 204, 1.0
+     *   -progress-bar-border: 230, 230, 230, 1.0
+     *   -progress-bar-line-width: 1
+     */
+  -progress-bar-track-background: rgba(0, 0, 0, 0.45);
+  -progress-bar-track-border: rgba(0, 0, 0, 0.7);
+  -progress-bar-background: white;
+  -progress-bar-border: white; }
 
 #dashtodockContainer.top #dash .placeholder,
 #dashtodockContainer.bottom #dash .placeholder {
