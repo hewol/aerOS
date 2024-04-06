@@ -20,17 +20,20 @@ echo "aerOS Update Shell Script"
 echo
 
 # Check if updates are available
-if [ "$CURRENT_VERSION" != "$LATEST_VERSION" ]
+if [ "$CURRENT_VERSION" = "$(echo -e "$CURRENT_VERSION\n$LATEST_VERSION" | sort -V | head -n1)" ]
 then
     echo "New update! $LATEST_VERSION"
     echo
     CHANGELOG=$(jq -r ".releases.$LATEST_VERSION.changelog.[]" /tmp/releases.json)
     RELEASE_URL=$(jq -r ".releases.$LATEST_VERSION.url" /tmp/releases.json)
+    UPDATE_URL=$(jq -r ".releases.$LATEST_VERSION.package_url" /tmp/releases.json)
+
     echo "Changelog:"
     printf "%s" "$CHANGELOG"
     echo
     echo
     echo "GitHub release: $RELEASE_URL"
+    echo "Update package URL: $UPDATE_URL"
     echo
     echo "Notes":
     echo "Some settings and configurations might be restored back to their default state"
@@ -41,22 +44,20 @@ then
     read -p "Would you like to begin the update? [y/n] " -n 1 -r
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
+        set -e
         echo
-        cp /tmp/os-release /etc/os-release
-        cp /tmp/lsb-release /etc/lsb-release
-        sudo pacman --config /etc/pacman-update.conf -Syu --noconfirm
-        EXITCODE=$?
-        if [ "$EXITCODE" != "0" ]
+        pv update.tar.gz | tar --xattrs-include="*.*" --numeric-owner --strip-components=1 -C / -xpz
+        mkinitcpio -P
+        genfstab -U -p / > /etc/fstab
+        grub-mkconfig -o /boot/grub/grub.cfg
+        ( cd /var/lib/pacman/local && ls | sort | awk -v re='(.*)-[^-]*-[^-]*$' 'match($0, re, a) { if (!(a[1] in p)){p[a[1]]} else {print} }' | xargs rm -rf )
+        pacman --config=/etc/pacman-update.conf -Syu --overwrite="*" --noconfirm
+
+        echo "System update has been installed, a reboot is required to apply it."
+        read -p "Would you like to reboot? [y/n] " -n 1 -r
+        if [[ $REPLY =~ ^[Yy]$ ]]
         then
-            echo "System update failed to install."
-            exit $EXITCODE
-        else
-            echo "System update has been installed, a reboot is required to apply it."
-            read -p "Would you like to reboot? [y/n] " -n 1 -r
-            if [[ $REPLY =~ ^[Yy]$ ]]
-            then
-                sudo sync ; reboot -f
-            fi
+            sync ; reboot -f
         fi
     fi
 else
