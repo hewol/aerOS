@@ -170,6 +170,13 @@
         "Added an update script",
         "Updated aerOS base system"
       ]
+    },
+    "v1_5": {
+      "url": "https://github.com/hewol/aerOS/releases/tag/v1-5",
+      "package_url": "https://lunah.is-a.dev/files/aerOS-1.5-UPDATE.tar.gz",
+      "changelog": [
+        "Upgraded to GNOME 46"
+      ]
     }
   }
 }
