@@ -41,7 +41,17 @@ Placement.TOP_LEFT = 8;
 Placement.CENTER = 9;
 
 export const Preview = GObject.registerClass({
-    GTypeName: "Preview"
+    GTypeName: "Preview",
+    Properties: {
+        'remove_icon_opacity': GObject.ParamSpec.double(
+            `remove_icon_opacity`,
+            `Revmove Icon Opacity`,
+            `Icon opacity when `,
+            GObject.ParamFlags.READWRITE,
+            0.0, 1.0,
+            1.0,
+        )
+    }
 }, class Preview extends Clutter.Clone {
     _init(window, switcher, ...args) {
         super._init(...args);
@@ -114,10 +124,13 @@ export const Preview = GObject.registerClass({
             transition.set_to(param_value);
             this.get_effect(effect_name)[parameter_name] = 1.0;
             this.add_transition(add_transition_name, transition);
+            transition.connect('new-frame', (timeline, msecs) => {
+                this.queue_redraw();
+            });
         } else if (this._effectCounts[name] == 0) {
             if (this.get_transition(add_transition_name) === null) {
                 let transition = Clutter.PropertyTransition.new(property_transition_name);
-                transition.progress_mode = Clutter.AnimationMode.EASE_IN_OUT_QUINT;
+                transition.progress_mode = Clutter.AnimationMode.LINEAR;
                 transition.duration = duration;
                 transition.remove_on_complete = true;
                 transition.set_to(param_value);
@@ -126,6 +139,9 @@ export const Preview = GObject.registerClass({
                 this.add_effect_with_name(effect_name, new effect_class(constructor_argument));
                 this.add_transition(add_transition_name, transition);
                 this._effectCounts[name] = 1;
+                transition.connect('new-frame', (timeline, msecs) => {
+                    this.queue_redraw();
+                });
             }
         } else {
             this._effectCounts[name] += 1;
@@ -229,7 +245,7 @@ export const Preview = GObject.registerClass({
                 this._highlight.set_style(this._getHighlightStyle(0.3));
                 let constraint = Clutter.BindConstraint.new(window_actor, Clutter.BindCoordinate.SIZE, 0);
                 this._highlight.add_constraint(constraint);
-                window_actor.add_actor(this._highlight);
+                window_actor.add_child(this._highlight);
 
             }
             if (this._flash == null) {
@@ -244,7 +260,7 @@ export const Preview = GObject.registerClass({
                 this._flash.set_style(this._getHighlightStyle(1));
                 let constraint = Clutter.BindConstraint.new(window_actor, Clutter.BindCoordinate.SIZE, 0);
                 this._flash.add_constraint(constraint);
-                window_actor.add_actor(this._flash);
+                window_actor.add_child(this._flash);
                 this._flash.ease({
                     opacity: 0,
                     duration: 500,
@@ -260,17 +276,32 @@ export const Preview = GObject.registerClass({
     
     addIcon() {
         let app = this.switcher._tracker.get_window_app(this.metaWin);
-        this._icon = app ? app.create_icon_texture(Math.min(this.width, this.height) * this.switcher._settings.app_switcher_icon_size_ratio) : null;
+        let icon_size = this.switcher._settings.overlay_icon_size;
+        this._icon = app ? app.create_icon_texture(Math.min(icon_size, this.width, this.height) / this.scale) : null;
 
         if (this._icon == null) {
             this._icon = new St.Icon({
                 icon_name: 'applications-other',
             });
         }
-        /*this.bind_property_full('x', this._icon, 'x',
-            GObject.BindingFlags.SYNC_CREATE),zZ*/
+       
         let constraint = Clutter.BindConstraint.new(this, Clutter.BindCoordinate.ALL, 0);
         this._icon.add_constraint(constraint);
+
+        this.bind_property_full('opacity',
+            this._icon, 'opacity',
+            GObject.BindingFlags.SYNC_CREATE,
+            (bind, source) => {
+                /* So that the icon fades out 1) when the preview fades
+                    out, such as in the timeline switcher, and 
+                    2) when the icon is being removed, 
+                    but also ensure the icon only goes as high as the setting
+                    opacity, we take the minimum of those three as our opacity.
+                    Seems there might be a better way, but I'm not sure. 
+                    */
+                return [true, Math.min(source, 255 * this.remove_icon_opacity,  255 * this.switcher._settings.overlay_icon_opacity)];
+            },
+            null);
         this.bind_property('rotation_angle_y', this._icon, 'rotation_angle_y',
             GObject.BindingFlags.SYNC_CREATE);
         this.bind_property('pivot_point', this._icon, 'pivot_point',
@@ -283,35 +314,34 @@ export const Preview = GObject.registerClass({
             GObject.BindingFlags.SYNC_CREATE);        
         this.bind_property('scale_z', this._icon, 'scale_z',
             GObject.BindingFlags.SYNC_CREATE);
-        this.bind_property('z_position', this._icon, 'z_position',
-            GObject.BindingFlags.SYNC_CREATE);
-        this.switcher.previewActor.add_actor(this._icon);
-        this._icon.opacity = 0;
+        this.switcher.previewActor.add_child(this._icon);
 
         if (this.switcher._settings.icon_has_shadow) {
             this._icon.add_style_class_name("icon-dropshadow");
         }
 
-        this._icon.ease({
-            opacity: 255 * this.switcher._settings.app_switcher_icon_opacity,
-            duration: 5000,
-            mode: Clutter.AnimationMode.EASE_IN_OUT_QUINT,
-        });
     }
 
     removeIcon(animation_time) {
         if (this._icon != null) {
-            this._icon.ease({
-                opacity: 0,
-                duration: 1000 * animation_time,
-                mode: Clutter.AnimationMode.EASE_IN_OUT_QUINT,
-                onComplete: () => {
-                    if (this._icon != null) {
-                        this._icon.destroy()
-                        this._icon = null;
-                    }
-                },
+            let transition = Clutter.PropertyTransition.new('remove_icon_opacity');
+            transition.duration = 1000.0 * animation_time;
+            this._icon.remove_icon_opacity_start = this._icon.opacity / 255.;
+            transition.set_from(this._icon.remove_icon_opacity_start);
+            transition.set_to(0);
+            transition.remove_on_complete = true;
+            transition.connect('new-frame', (timeline, msecs) => {
+                this._icon.opacity = 255 * this._icon.remove_icon_opacity_start * (1 - 
+                    timeline.get_progress());//(1 - msecs / transition.duration);
+                this._icon.queue_redraw();
+            })
+            transition.connect('completed', (timeline) => {
+                if (this._icon != null) {
+                    this._icon.destroy()
+                    this._icon = null;
+                }
             });
+            this.add_transition('remove_icon_opacity_transition', transition);
         }
     }
 

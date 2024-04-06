@@ -28,6 +28,8 @@ file_permissions=(
   ["/usr/local/bin/alci-displaymanager-check"]="0:0:755"
   ["/usr/local/bin/get-nemesis-on-alci"]="0:0:755"
   ["/usr/local/bin/fix-keys"]="0:0:755"
+  ["/etc/rc.local"]="0:0:755"
   ["/usr/local/bin/aeros-update"]="0:0:755"
   ["/usr/local/bin/patch-grub"]="0:0:755"
+  ["/usr/bin/calamares_polkit"]="0:0:755"
 )

@@ -377,7 +377,7 @@ const DockAbstractAppIcon = GObject.registerClass({
     }
 
     /**
-     * Update taraget for minimization animation
+     * Update target for minimization animation
      */
     updateIconGeometry() {
         // If (for unknown reason) the actor is not on the stage the reported size
@@ -997,7 +997,7 @@ const DockAppIconMenu = class DockAppIconMenu extends PopupMenu.PopupMenu {
         });
         source.connect('destroy', () => this.destroy());
 
-        Main.uiGroup.add_actor(this.actor);
+        Main.uiGroup.add_child(this.actor);
 
         const {remoteModel} = Docking.DockManager.getDefault();
         const remoteModelApp = remoteModel?.lookupById(this._source?.app?.id);
@@ -1148,7 +1148,7 @@ const DockAppIconMenu = class DockAppIconMenu extends PopupMenu.PopupMenu {
             if (Shell.AppSystem.get_default().lookup_app('org.gnome.Software.desktop') &&
                 (this._source instanceof DockAppIcon)) {
                 this._appendSeparator();
-                const item = this._appendMenuItem(_('Show Details'));
+                const item = this._appendMenuItem(_('App Details'));
                 item.connect('activate', () => {
                     const id = this._source.app.get_id();
                     const args = GLib.Variant.new('(ss)', [id, '']);

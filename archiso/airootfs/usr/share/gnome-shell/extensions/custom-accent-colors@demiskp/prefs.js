@@ -49,15 +49,13 @@ class CustomAccentColorsPrefsWidget extends Adw.PreferencesPage {
 
         const listModel = new Gio.ListStore({ item_type: CustomAccentColors });
         listModel.append(new CustomAccentColors('Default', 'default'));
-        listModel.append(new CustomAccentColors('Blue', 'blue'));
         listModel.append(new CustomAccentColors('Green', 'green'));
         listModel.append(new CustomAccentColors('Yellow', 'yellow'));
         listModel.append(new CustomAccentColors('Orange', 'orange'));
         listModel.append(new CustomAccentColors('Red', 'red'));
-        listModel.append(new CustomAccentColors('Magenta', 'magenta'));
+        listModel.append(new CustomAccentColors('Pink', 'pink'));
         listModel.append(new CustomAccentColors('Purple', 'purple'));
         listModel.append(new CustomAccentColors('Brown', 'brown'));
-        listModel.append(new CustomAccentColors('Gray', 'gray'));
         this.mainRow = new Adw.ComboRow({
             title: 'Accent Color',
             subtitle:
@@ -112,21 +110,9 @@ class CustomAccentColorsPrefsWidget extends Adw.PreferencesPage {
         this.settings.bind('theme-shell', toggle, 'active', Gio.SettingsBindFlags.DEFAULT);
         extraRow = new Adw.ActionRow({
             title: 'Shell Theming',
-            subtitle: 'Requires the Shell Theme to be set to "Custom-Accent-Colors".',
+            subtitle: 'Requires the Shell Theme to be set to "Custom-Accent-Colors" in Gnome Tweaks.',
             activatable_widget: toggle,
         });
-        extraRow.add_suffix(toggle);
-        this.extraGroup.add(extraRow);
-
-        toggle = new Gtk.Switch({
-            action_name: 'theme-icons',
-            valign: Gtk.Align.CENTER,
-        });
-        this.settings.bind('theme-icons', toggle, 'active', Gio.SettingsBindFlags.DEFAULT);
-        extraRow = new Adw.ActionRow({
-            title: 'Icon Theming',
-            activatable_widget: toggle,
-        })
         extraRow.add_suffix(toggle);
         this.extraGroup.add(extraRow);
     }
