@@ -45,7 +45,7 @@ then
         set -e
         echo
         wget $UPDATE_URL -O ~/update.tar.gz
-        pv ~/update.tar.gz | tar --xattrs-include="*.*" --numeric-owner -C / -xpz
+        pv ~/update.tar.gz | tar --xattrs-include="*.*" --ignore-failed-read --no-same-owner -C / -xpz
         mkinitcpio -P
         genfstab -U -p / > /etc/fstab
         grub-mkconfig -o /boot/grub/grub.cfg
