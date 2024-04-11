@@ -93,3 +93,5 @@ if [[ "$retcod" -eq 0 ]]; then
 else
     echo "Building failed."
 fi
+
+exit $retcod
