@@ -43,11 +43,11 @@ then
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
         # If any commands have failed, quit immediately (IF THIS HAPPENED TO YOU, IMMEDIATELY REINSTALL AS YOUR SYSTEM IS NOW UNSTABLE)
-        try() { "$@" || () { echo -n "System update failed to install.\nYour system is now unstable. Reinstall aerOS immediately."; exit 1 } }
+        try() { "$@" || _() { echo "Failed."; exit 1; }; _; }
         echo
 
         # Get and apply update file (DO NOT MAKE THOSE WITH THE ISO, ALWAYS INSTALL FIRST)
-        try wget $UPDATE_URL -O ~/update.tar.gz
+        try wget "$UPDATE_URL" -O ~/update.tar.gz
         try pv ~/update.tar.gz | tar --xattrs --xattrs-include="*.*" --keep-directory-symlink --no-same-owner -C / -xpz
 
         # Reset Pacman package manager
@@ -55,7 +55,7 @@ then
         try pacman-key --init
         try pacman-key --populate
         try pacman -Scc --noconfirm
-        ( try cd /var/lib/pacman/local && ls | sort | awk -v re='(.*)-[^-]*-[^-]*$' 'match($0, re, a) { if (!(a[1] in p)){p[a[1]]} else {print} }' | xargs rm -rf )
+        ( try cd /var/lib/pacman/local && find . | sort | awk -v re='(.*)-[^-]*-[^-]*$' 'match($0, re, a) { if (!(a[1] in p)){p[a[1]]} else {print} }' | xargs rm -rf )
 
         # Force update previously non-updated packages
         try pacman --config=/etc/pacman-update.conf -Syu --overwrite="*" --noconfirm
