@@ -43,7 +43,7 @@ then
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
         # If any commands have failed, quit immediately (IF THIS HAPPENED TO YOU, IMMEDIATELY REINSTALL AS YOUR SYSTEM IS NOW UNSTABLE)
-        try() { "$@" || _() { echo "Failed."; exit 1; }; _; }
+        try() { "$@" || _() { printf "System update failed to install.\nPlease reinstall aerOS immediately as it may not work anymore!"; exit 1; }; _; }
         echo
 
         # Get and apply update file (DO NOT MAKE THOSE WITH THE ISO, ALWAYS INSTALL FIRST)
