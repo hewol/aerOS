@@ -18,7 +18,7 @@ echo "aerOS Update Shell Script"
 echo
 
 # Check if updates are available
-if ! [ "$(printf '%s\n' "$CURRENT_VERSION" "$LATEST_VERSION" | sort -V | head -n1" = "$LATEST_VERSION" ];
+if ! [ "$(printf '%s\n' "$CURRENT_VERSION" "$LATEST_VERSION" | sort -V | head -n1)" = "$LATEST_VERSION" ];
 then
     echo "New update! $LATEST_VERSION"
     echo
