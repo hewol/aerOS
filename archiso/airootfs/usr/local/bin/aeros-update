@@ -18,7 +18,7 @@ echo "aerOS Update Shell Script"
 echo
 
 # Check if updates are available
-if [ "$CURRENT_VERSION" = "$(echo -e "$CURRENT_VERSION\n$LATEST_VERSION" | sort -V | head -n1)" ]
+if ! [ "$(printf '%s\n' "$CURRENT_VERSION" "$LATEST_VERSION" | sort -V | head -n1" = "$LATEST_VERSION" ];
 then
     echo "New update! $LATEST_VERSION"
     echo
@@ -43,7 +43,7 @@ then
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
         # If any commands have failed, quit immediately (IF THIS HAPPENED TO YOU, IMMEDIATELY REINSTALL AS YOUR SYSTEM IS NOW UNSTABLE)
-        try() { "$@" || _() { printf "System update failed to install.\nPlease reinstall aerOS immediately as it may not work anymore!"; exit 1; }; _; }
+        try() { "$@" || _() { printf "System update failed to install.\nPlease reinstall aerOS immediately as it may not work anymore!\n"; exit 1; }; _ 2>/dev/null; }
         echo
 
         # Get and apply update file (DO NOT MAKE THOSE WITH THE ISO, ALWAYS INSTALL FIRST)
@@ -55,7 +55,7 @@ then
         try pacman-key --init
         try pacman-key --populate
         try pacman -Scc --noconfirm
-        ( try cd /var/lib/pacman/local && find . | sort | awk -v re='(.*)-[^-]*-[^-]*$' 'match($0, re, a) { if (!(a[1] in p)){p[a[1]]} else {print} }' | xargs rm -rf )
+        try find /var/lib/pacman/local | sort | awk -v re='(.*)-[^-]*-[^-]*$' 'match($0, re, a) { if (!(a[1] in p)){p[a[1]]} else {print} }' | xargs rm -rf
 
         # Force update previously non-updated packages
         try pacman --config=/etc/pacman-update.conf -Syu --overwrite="*" --noconfirm
