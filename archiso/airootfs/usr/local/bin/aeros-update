@@ -6,6 +6,9 @@ then
     exec sudo /bin/bash "$0" "$@"
 fi
 
+# Check we have the packages required
+which jq wget pv 2>&1 >/dev/null || ( echo "You do not have the required packages. Install: wget, jq, pv."; exit 1 )
+
 # Download update information
 wget https://raw.githubusercontent.com/hewol/aerOS/master/releases.json -O /tmp/releases.json 2>/dev/null
 
@@ -46,9 +49,9 @@ then
         try() { "$@" || _() { printf "System update failed to install.\nPlease reinstall aerOS immediately as it may not work anymore!\n"; exit 1; }; _ 2>/dev/null; }
         echo
 
-        # Get and apply update file (DO NOT MAKE THOSE WITH THE ISO, ALWAYS INSTALL FIRST)
+        # Get and apply update file
         try wget "$UPDATE_URL" -O ~/update.tar.gz
-        try pv ~/update.tar.gz | tar --xattrs --xattrs-include="*.*" --keep-directory-symlink --no-same-owner -C / -xpz
+        try pv ~/update.tar.gz | tar --xattrs-include="*.*" --no-same-owner -C / -xpz
 
         # Reset Pacman package manager
         try rm -rf /etc/pacman.d/gnupg
