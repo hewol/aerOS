@@ -54,8 +54,8 @@ then
         try rm -rf /etc/pacman.d/gnupg
         try pacman-key --init
         try pacman-key --populate
+        try pacman -Sy
         try pacman -Scc --noconfirm
-        try find /var/lib/pacman/local | sort | awk -v re='(.*)-[^-]*-[^-]*$' 'match($0, re, a) { if (!(a[1] in p)){p[a[1]]} else {print} }' | xargs rm -rf
 
         # Force update previously non-updated packages
         try pacman --config=/etc/pacman-update.conf -Syu --overwrite="*" --noconfirm
