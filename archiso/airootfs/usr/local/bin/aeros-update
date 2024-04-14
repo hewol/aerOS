@@ -6,14 +6,21 @@ then
     exec sudo /bin/bash "$0" "$@"
 fi
 
-# Check we have the packages required
+# Check if we are running aerOS
+source /etc/os-release
+if ! [ $ID = "aeros" ];
+then
+    echo "You are not running aerOS, you cannot upgrade to aerOS from $PRETTY_NAME ($BUILD_ID)".
+    exit 1
+fi
+
+# Check if we have the required packages
 which jq wget pv 2>&1 >/dev/null || ( echo "You do not have the required packages. Install: wget, jq, pv."; exit 1 )
 
 # Download update information
 wget https://raw.githubusercontent.com/hewol/aerOS/master/releases.json -O /tmp/releases.json 2>/dev/null
 
 # Get version information
-source /etc/os-release
 CURRENT_VERSION=$BUILD_ID
 LATEST_VERSION=$(jq -r .latest /tmp/releases.json)
 
