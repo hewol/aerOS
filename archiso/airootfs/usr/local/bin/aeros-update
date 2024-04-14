@@ -8,7 +8,7 @@ fi
 
 # Check if we are running aerOS
 source /etc/os-release
-if ! [ $ID = "aeros" ];
+if ! [ $ID = "aerOS" ];
 then
     echo "You are not running aerOS, you cannot upgrade to aerOS from $PRETTY_NAME ($BUILD_ID)".
     exit 1
