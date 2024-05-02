@@ -20,7 +20,6 @@ cryptsetup
 darkhttpd
 ddrescue
 dhclient
-dhcpcd
 diffutils
 dmidecode
 dmraid
@@ -46,8 +45,6 @@ hdparm
 hyperv
 intel-ucode
 irssi
-iw
-iwd
 jfsutils
 kitty-terminfo
 less
@@ -123,7 +120,6 @@ vpnc
 wezterm-terminfo
 wireless-regdb
 wireless_tools
-wpa_supplicant
 wvdial
 xfsprogs
 xl2tpd
