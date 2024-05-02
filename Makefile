@@ -14,7 +14,7 @@ update: test-sudo
     @( cd ./work/fs && rm -rf usr/lib/calamares usr/lib/libcalamares* usr/lib/initcpio/hooks/archiso* && rm -rf usr/lib/firmware )
     @( cd ./work/fs && rm -rf var/lib/pacman/local )
     @( cd ./work/fs && rm -rf boot dev home mnt proc root run srv sys tmp )
-    sed -i 's/archiso archiso_loop_mnt archiso_pxe_common archiso_pxe_nbd archiso_pxe_http archiso_pxe_nfs //g' ./work/fs/etc/mkinitcpio.conf
+    @sed -i 's/archiso archiso_loop_mnt archiso_pxe_common archiso_pxe_nbd archiso_pxe_http archiso_pxe_nfs //g' ./work/fs/etc/mkinitcpio.conf
     @( cd ./work/fs && tar -cf - . | pv -s $$(du -sb . | awk -v OFMT='%d' '{ print $$1*1.02 }' | cut -f1) | gzip -9 > ../../out/update.tar.gz )
     @rm -rf work
 test-sudo:
