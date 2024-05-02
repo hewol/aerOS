@@ -267,6 +267,7 @@ foomatic-db-engine
 gimp
 git
 gnome-disk-utility
+grub-hook
 gsfonts
 gutenprint
 jq
