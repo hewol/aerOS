@@ -20,3 +20,5 @@ jobs:
       - uses: dessant/lock-threads@v5
         with:
           issue-inactive-days: '31'
+          pr-inactive-days: '31'
+          discussion-inactive-days: '31'
