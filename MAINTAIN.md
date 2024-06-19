@@ -20,8 +20,8 @@ Do not use any release types marked in ❌.
 | Versions            | Maintained          | EOL Date            |
 | ------------------- | ------------------- | ------------------- | 
 | v1.0                | ✅                 | soon™               |
-| v1.0 RC             | ✅                 | 05/25/2024          |
-| v1.0 Beta           | ✅                 | 03/29/2024          |
+| v1.0 RC             | ❌                 | 05/25/2024          |
+| v1.0 Beta           | ❌                 | 03/29/2024          |
 | v1.0 Early Beta     | ❌                 | 11/09/2023          |
 
 ### Supported Releases
@@ -33,7 +33,7 @@ Do not use the releases marked in ❌.
 | v1.1 Update 2 (v1.1-2)       | ✅                 | 01/30/2025          |
 | v1.1 Update 1 (v1.1)         | ✅                 | 01/05/2025          |
 | v1.0                         | ✅                 | 01/02/2025          |
-| v1.0 RC 3 (RC3)              | ✅                 | 05/25/2024          |
+| v1.0 RC 3 (RC3)              | ❌                 | 05/25/2024          |
 | v1.0 RC 2 (RC2)              | ❌                 | 04/22/2024          |
 | v1.0 RC 1 (RC1)              | ❌                 | 04/04/2024          |
 | v1.0 Beta 3 (B3)             | ❌                 | 03/29/2024          |
