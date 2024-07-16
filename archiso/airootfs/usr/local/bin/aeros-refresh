@@ -1,0 +1,3 @@
+#!/bin/bash
+
+pacman -Qqn | tr "\n" " " | xargs -n1 pacman -S --noconfirm

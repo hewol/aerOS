@@ -1,1 +1,0 @@
-/usr/share/licenses/spdx/GPL-2.0-only.txt

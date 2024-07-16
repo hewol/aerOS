@@ -1,303 +1,66 @@
-#######################################################
-###                   Arch Linux                    ###
-#######################################################
-
-# group name: releng-base (not a package/group in a repo)
-# contains a set of packages installed by default in arch linux isos
-
-alsa-utils
+# Arch Linux baseline
+# Note: 'cloud-init' was removed to improve boot speed.
+# Virtual machine guest support software was removed.
+# Dependencies for image installation were added.
+# UEFI dependencies were included.
+#
 amd-ucode
-arch-install-scripts
-archinstall
-b43-fwcutter
 base
-bind
-brltty
-broadcom-wl
-btrfs-progs
-clonezilla
-cryptsetup
-darkhttpd
-ddrescue
-dhclient
-diffutils
-dmidecode
-dmraid
-dnsmasq
 dosfstools
-e2fsprogs
 edk2-shell
 efibootmgr
-espeakup
-ethtool
-exfatprogs
-f2fs-tools
-fatresize
-foot-terminfo
-fsarchiver
-gnu-netcat
-gpart
-gpm
-gptfdisk
-grml-zsh-config
-grub
-hdparm
-hyperv
 intel-ucode
-irssi
-jfsutils
-kitty-terminfo
-less
-lftp
-libfido2
-libusb-compat
 linux
-linux-atm
-linux-firmware
-linux-firmware-marvell
-livecd-sounds
-lsscsi
-lvm2
-lynx
-man-db
-man-pages
-mc
-mdadm
-memtest86+
-memtest86+-efi
 mkinitcpio
 mkinitcpio-archiso
-mkinitcpio-nfs-utils
-modemmanager
-mtools
-nano
-nbd
-ndisc6
-nfs-utils
-nilfs-utils
-nmap
-ntfs-3g
-nvme-cli
-open-iscsi
-openconnect
 openssh
-openvpn
-partclone
-parted
-partimage
-pcsclite
-ppp
-pptpclient
 pv
-qemu-guest-agent
-refind
-reflector
-reiserfsprogs
-rp-pppoe
 rsync
-rxvt-unicode-terminfo
-screen
-sdparm
-sg3_utils
-smartmontools
-sof-firmware
 squashfs-tools
 sudo
 syslinux
-systemd-resolvconf
-tcpdump
-terminus-font
-testdisk
-tmux
-tpm2-tss
-udftools
-usb_modeswitch
-usbmuxd
-usbutils
-vim
-virtualbox-guest-utils-nox
-vpnc
-wezterm-terminfo
-wireless-regdb
-wireless_tools
-wvdial
-xfsprogs
-xl2tpd
-zsh
 
-
-#######################################################
-###                    ALCI                         ###
-#######################################################
-
-#######################################################
-###  PACKAGES THAT ARE REMOVED AFTER INSTALLATION   ###
-###             VIA CALAMARES CONFIG                ###
-#######################################################
-
-aeros-calamares-config
-calamares-git
-
-#######################################################
-###      PACKAGES THAT STAY AFTER INSTALLATION      ###
-#######################################################
-
-os-prober
-mkinitcpio-openswap
-
-##### you can also use nmtui from the terminal
-networkmanager
-network-manager-applet
-
-#######################################################
-###                    EXTRAS                       ###
-#######################################################
-
-##### Drivers for graphical cards
-
-#driver for virtualbox - xf86-video-vmware is dependency
-#systemctl enable vboxservice
-#systemctl start vboxservice
-#to have fullscreen
-#virtualbox-guest-utils
-
-xf86-video-intel
-xf86-video-amdgpu
-xf86-video-nouveau
-xf86-video-qxl
-xf86-video-vmware
-
-##### want to use proprietary nvidia drivers, replace xf86-video-nouveau
-
-#nvidia
-#nvidia-settings
-#nvidia-utils
-
-##### want to have base-devel group
-
-base-devel
-
-##### want to have linux-headers
-
-linux-headers
-
-##### want to have a desktop
-##### installed individually because you cannot defer updates of the gnome group if you install it instead of its members
-
-baobab
-evince
+# GNOME desktop (debloated)
+# Note: the 'gnome' metapackage cannot have its members deferred for updates.
+# Some of the members of this metapackage have explicitly been installed instead.
+#
 gdm
 gnome-backgrounds
-gnome-calculator
-gnome-calendar
-gnome-characters
-gnome-clocks
-gnome-color-manager
-gnome-connections
-gnome-console
-gnome-contacts
 gnome-control-center
+gnome-console
 gnome-disk-utility
-gnome-font-viewer
-gnome-keyring
-gnome-logs
-gnome-maps
 gnome-menus
 gnome-music
-gnome-remote-desktop
-gnome-session
-gnome-settings-daemon
-gnome-shell
 gnome-shell-extensions
-gnome-software
 gnome-system-monitor
 gnome-text-editor
-gnome-tour
+gnome-themes-extra
 gnome-user-docs
-gnome-user-share
-gnome-weather
-grilo-plugins
-gvfs
-gvfs-afc
-gvfs-goa
-gvfs-google
-gvfs-gphoto2
-gvfs-mtp
-gvfs-nfs
-gvfs-smb
 loupe
-malcontent
 nautilus
-orca
-rygel
-simple-scan
 snapshot
-sushi
-tecla
 totem
-tracker3-miners
-xdg-desktop-portal-gnome
-xdg-user-dirs-gtk
-yelp
 
-##### want to add/use the Chaotic repo
-
+# aerOS packages
+# These packages are explicitly provided from repos used or provided by aerOS.
+# Note: Some of these packages are required by scripts used in aerOS.
+#
+aeros-calamares-config
+calamares-git
 chaotic-mirrorlist
 chaotic-keyring
-
-#######################################################
-###                     aerOS                       ###
-#######################################################
-
-##### aerOS specific packages
-
-alsa-utils
-cifs-utils
-ckbcomp
-cups
-cups-filters
-cups-pdf
 firefox
-foomatic-db
-foomatic-db-engine
+flatpak
 gimp
-git
-gnome-disk-utility
 grub-hook
-gsfonts
-gutenprint
+gtk-engine-murrine
 jq
-lib32-mesa
-lib32-vulkan-icd-loader
-libreoffice-fresh
-mesa
+mkinitcpio-firmware
+nano
 neofetch
-noto-fonts
-noto-fonts-cjk
-p7zip
-pavucontrol
-pipewire
+networkmanager
+oh-my-posh-bin
 plymouth
-power-profiles-daemon
-pulseaudio
-sane
-simple-scan
-skanlite
-sshfs
-system-config-printer
-unarchiver
-unrar
-unzip
-vulkan-icd-loader
 wget
-xf86-input-evdev
-xf86-input-libinput
-xf86-input-synaptics
-xf86-input-vmmouse
-xorg-xfontsel
-xorg-xinit
-xorg-xinput
-xorg-xlsfonts
-xorg-xrandr
-xorg-xwininfo
+vim
 yay

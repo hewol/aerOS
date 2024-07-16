@@ -2,6 +2,6 @@ NAME=aerOS
 PRETTY_NAME=aerOS
 ID=aerOS
 ID_LIKE=arch
-BUILD_ID=v1_5
+BUILD_ID=v2_0
 HOME_URL=https://hewol.github.io
 LOGO=aeros-logo

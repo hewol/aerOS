@@ -1,182 +1,191 @@
 {
-  "latest": "v1_5",
-  "releases": {
-    "v1_esb1": {
-      "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta",
-      "package_url": null,
-      "changelog": [
-        "Initial release"
-      ]
-    },
-    "v1_esb2": {
-      "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-2",
-      "package_url": null,
-      "changelog": [
-        "Fixed video driver failing",
-        "Fixed GNOME crashing"
-      ]
-    },
-    "v1_esb3": {
-      "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-3",
-      "package_url": null,
-      "changelog": [
-        "Fixed freezing during boot",
-        "Added Plymouth boot animation"
-      ]
-    },
-    "v1_esb4": {
-      "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-4",
-      "package_url": null,
-      "changelog": [
-        "Updated aerOS base system"
-      ]
-    },
-    "v1_esb5": {
-      "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-5",
-      "package_url": null,
-      "changelog": [
-        "Fixed ZSH compinit error",
-        "Fixed network connection issues"
-      ]
-    },
-    "v1_esb6": {
-      "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-6",
-      "package_url": null,
-      "changelog": [
-        "Fixed Calamares installer"
-      ]
-    },
-    "v1_esb7": {
-      "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-7",
-      "package_url": null,
-      "changelog": [
-        "Added a custom GNOME theme",
-        "Made live system load faster",
-        "Made GNOME use Wayland, rather than X11",
-        "The system is generally faster",
-        "Pacman has been improved"
-      ]
-    },
-    "v1_esb8": {
-      "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-8",
-      "package_url": null,
-      "changelog": [
-        "Fixed pacman-init service, which makes pacman run correctly",
-        "Added an AUR helper: yay",
-        "Added custom wallpapers",
-        "Removed unknown and conflicting packages"
-      ]
-    },
-    "v1_esb9": {
-      "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-9",
-      "package_url": null,
-      "changelog": [
-        "Made untested changes to Calamares and GRUB"
-      ]
-    },
-    "v1_esb10": {
-      "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-10",
-      "package_url": null,
-      "changelog": [
-        "Calamares was tweaked to try to fix it, again",
-        "Removed Docker",
-        "Fixed startup manager error",
-        "Removed ALG repo",
-        "SystemD was modified to try and fix the startup manager"
-      ]
-    },
-    "v1_esb11": {
-      "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-11",
-      "package_url": null,
-      "changelog": [
-        "Swapped around CPU microcodes"
-      ]
-    },
-    "v1_esb12": {
-      "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-12",
-      "package_url": null,
-      "changelog": [
-        "Removed a redundant installer",
-        "Made Calamares accept any password",
-        "Fixed some syntax errors"
-      ]
-    },
-    "v1_b1": {
-      "url": "https://github.com/hewol/aerOS/releases/tag/v1-beta-1",
-      "package_url": null,
-      "changelog": [
-        "Rebuilt the whole system base to finally fix installation issues",
-        "Replaced bootloaders with default ones"
-      ]
-    },
-    "v1_b2": {
-      "url": "https://github.com/hewol/aerOS/releases/tag/v1-beta-2",
-      "package_url": null,
-      "changelog": [
-        "Added the aerOS logo to Plymouth boot screen",
-        "Login managers were replaced and their X sessions were removed"
-      ]
-    },
-    "v1_b3": {
-      "url": "https://github.com/hewol/aerOS/releases/tag/v1-beta-3",
-      "package_url": null,
-      "changelog": [
-        "Package list has been rewritten",
-        "GNOME Web has been replaced with Firefox"
-      ]
-    },
-    "v1_rc1": {
-      "url": "https://github.com/hewol/aerOS/releases/tag/v1-rc1",
-      "package_url": null,
-      "changelog": [
-        "Custom GNOME extensions were enabled",
-        "Mkinitcpio warnings were fixed"
-      ]
-    },
-    "v1_rc2": {
-      "url": "https://github.com/hewol/aerOS/releases/tag/v1-rc2",
-      "package_url": null,
-      "changelog": [
-        "Removed beta branding"
-      ]
-    },
-    "v1_rc3": {
-      "url": "https://github.com/hewol/aerOS/releases/tag/v1-rc3",
-      "package_url": null,
-      "changelog": [
-        "Removed extensions not meant to be added in aerOS at this point in time",
-        "Made sure there is no deprecated repository in the system"
-      ]
-    },
-    "v1": {
-      "url": "https://github.com/hewol/aerOS/releases/tag/v1-0",
-      "package_url": null,
-      "changelog": [
-        "Finalized aerOS to be released to everybody"
-      ]
-    },
-    "v1_1": {
-      "url": "https://github.com/hewol/aerOS/releases/tag/v1-1",
-      "package_url": null,
-      "changelog": [
-        "Added safe graphics option",
-        "Fixed sound not initializing"
-      ]
-    },
-    "v1_1_2": {
-      "url": "https://github.com/hewol/aerOS/releases/tag/v1-1-2",
-      "package_url": null,
-      "changelog": [
-        "Added an update script",
-        "Updated aerOS base system"
-      ]
-    },
-    "v1_5": {
-      "url": "https://github.com/hewol/aerOS/releases/tag/v1-5",
-      "package_url": "https://lunah.is-a.dev/files/aerOS-1.5-UPDATE.tar.gz",
-      "changelog": [
-        "Upgraded to GNOME 46"
-      ]
+    "latest": "v1_5",
+    "releases": {
+        "v1_esb1": {
+            "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta",
+            "package_url": null,
+            "changelog": [
+                "Initial release"
+            ]
+        },
+        "v1_esb2": {
+            "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-2",
+            "package_url": null,
+            "changelog": [
+                "Fixed video driver failing",
+                "Fixed GNOME crashing"
+            ]
+        },
+        "v1_esb3": {
+            "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-3",
+            "package_url": null,
+            "changelog": [
+                "Fixed freezing during boot",
+                "Added Plymouth boot animation"
+            ]
+        },
+        "v1_esb4": {
+            "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-4",
+            "package_url": null,
+            "changelog": [
+                "Updated aerOS base system"
+            ]
+        },
+        "v1_esb5": {
+            "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-5",
+            "package_url": null,
+            "changelog": [
+                "Fixed ZSH compinit error",
+                "Fixed network connection issues"
+            ]
+        },
+        "v1_esb6": {
+            "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-6",
+            "package_url": null,
+            "changelog": [
+                "Fixed Calamares installer"
+            ]
+        },
+        "v1_esb7": {
+            "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-7",
+            "package_url": null,
+            "changelog": [
+                "Added a custom GNOME theme",
+                "Made live system load faster",
+                "Made GNOME use Wayland, rather than X11",
+                "The system is generally faster",
+                "Pacman has been improved"
+            ]
+        },
+        "v1_esb8": {
+            "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-8",
+            "package_url": null,
+            "changelog": [
+                "Fixed pacman-init service, which makes pacman run correctly",
+                "Added an AUR helper: yay",
+                "Added custom wallpapers",
+                "Removed unknown and conflicting packages"
+            ]
+        },
+        "v1_esb9": {
+            "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-9",
+            "package_url": null,
+            "changelog": [
+                "Made untested changes to Calamares and GRUB"
+            ]
+        },
+        "v1_esb10": {
+            "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-10",
+            "package_url": null,
+            "changelog": [
+                "Calamares was tweaked to try to fix it, again",
+                "Removed Docker",
+                "Fixed startup manager error",
+                "Removed ALG repo",
+                "SystemD was modified to try and fix the startup manager"
+            ]
+        },
+        "v1_esb11": {
+            "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-11",
+            "package_url": null,
+            "changelog": [
+                "Swapped around CPU microcodes"
+            ]
+        },
+        "v1_esb12": {
+            "url": "https://github.com/hewol/aerOS/releases/tag/v1-early-beta-12",
+            "package_url": null,
+            "changelog": [
+                "Removed a redundant installer",
+                "Made Calamares accept any password",
+                "Fixed some syntax errors"
+            ]
+        },
+        "v1_b1": {
+            "url": "https://github.com/hewol/aerOS/releases/tag/v1-beta-1",
+            "package_url": null,
+            "changelog": [
+                "Rebuilt the whole system base to finally fix installation issues",
+                "Replaced bootloaders with default ones"
+            ]
+        },
+        "v1_b2": {
+            "url": "https://github.com/hewol/aerOS/releases/tag/v1-beta-2",
+            "package_url": null,
+            "changelog": [
+                "Added the aerOS logo to Plymouth boot screen",
+                "Login managers were replaced and their X sessions were removed"
+            ]
+        },
+        "v1_b3": {
+            "url": "https://github.com/hewol/aerOS/releases/tag/v1-beta-3",
+            "package_url": null,
+            "changelog": [
+                "Package list has been rewritten",
+                "GNOME Web has been replaced with Firefox"
+            ]
+        },
+        "v1_rc1": {
+            "url": "https://github.com/hewol/aerOS/releases/tag/v1-rc1",
+            "package_url": null,
+            "changelog": [
+                "Custom GNOME extensions were enabled",
+                "Mkinitcpio warnings were fixed"
+            ]
+        },
+        "v1_rc2": {
+            "url": "https://github.com/hewol/aerOS/releases/tag/v1-rc2",
+            "package_url": null,
+            "changelog": [
+                "Removed beta branding"
+            ]
+        },
+        "v1_rc3": {
+            "url": "https://github.com/hewol/aerOS/releases/tag/v1-rc3",
+            "package_url": null,
+            "changelog": [
+                "Removed extensions not meant to be added in aerOS at this point in time",
+                "Made sure there is no deprecated repository in the system"
+            ]
+        },
+        "v1": {
+            "url": "https://github.com/hewol/aerOS/releases/tag/v1-0",
+            "package_url": null,
+            "changelog": [
+                "Finalized aerOS to be released to everybody"
+            ]
+        },
+        "v1_1": {
+            "url": "https://github.com/hewol/aerOS/releases/tag/v1-1",
+            "package_url": null,
+            "changelog": [
+                "Added safe graphics option",
+                "Fixed sound not initializing"
+            ]
+        },
+        "v1_1_2": {
+            "url": "https://github.com/hewol/aerOS/releases/tag/v1-1-2",
+            "package_url": null,
+            "changelog": [
+                "Added an update script",
+                "Updated aerOS base system"
+            ]
+        },
+        "v1_5": {
+            "url": "https://github.com/hewol/aerOS/releases/tag/v1-5",
+            "package_url": "https://lunah.is-a.dev/files/aerOS-1.5-UPDATE.tar.gz",
+            "changelog": [
+                "Upgraded to GNOME 46"
+            ]
+        },
+        "v2_0": {
+            "url": null,
+            "package_url": null,
+            "changelog": [
+                "Redone the base system",
+                "Added package wrapper for choosing package providers",
+                "Added a new GNOME user interface based on GNOME 46"
+            ]
+        }
     }
-  }
 }

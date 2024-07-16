@@ -7,4 +7,4 @@ If it doesn't, please [open an issue](https://github.com/hewol/aerOS/issues/new)
 
 Run `sudo pacman -Q archiso` before running the build script, then you can proceed to building.<br>
 
-To build aerOS, run `time ./build.sh` and wait. After some time you should receive your copy of aerOS. Enjoy!
+To build aerOS, run `time sudo make` and wait. After some time you should receive your copy of aerOS. Enjoy!

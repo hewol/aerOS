@@ -1,0 +1,7 @@
+#!/bin/bash
+
+pacman -D --asdeps $(pacman -Qqe)
+pacman -D --asexplicit base grub linux linux-firmware mkinitcpio-firmware
+
+pacman -Rns --noconfirm $(pacman -Qdtq)
+xargs -n1 pacman -S --noconfirm < /etc/packages.x86_64
