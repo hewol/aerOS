@@ -1,4 +1,4 @@
-<h1 align="center"><img src="https://hewol.github.io/assets/img/aeros.png"></img><br>aerOS</h1>
+<img src="https://hewol.github.io/assets/img/aeros-wide-dark.png"></img><br>
 <p align="center">A work-in-progress Arch-based Linux distro built with <code>archiso</code>.</p>
 
 
