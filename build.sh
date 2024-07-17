@@ -1,23 +1,10 @@
 #!/bin/bash
-
-pacman -Q gdm networkmanager network-manager-applet > /dev/null
-NOT_INSTALLED=$?
-
-echo "Installing required packages"
-sudo pacman -Sy archiso gdm networkmanager network-manager-applet --noconfirm
-
 set -e
+
 clean() {
     echo "Cleaning work directory"
-    sudo umount -Rq work || true
-    sudo rm -r work
-
-    if [ $NOT_INSTALLED -eq 0 ]; then
-        echo "Not removing build packages because GNOME is installed."
-    else
-        echo "Cleaning required build packages"
-        sudo pacman -Rns gdm networkmanager network-manager-applet --noconfirm       
-    fi
+    sudo umount -Rq work || echo "ALERT: Some mounted directories were not removed, a reboot is required."
+    sudo rm -rf work
 }
 
 enable_services() {
@@ -25,10 +12,8 @@ enable_services() {
         source="$1"
         target="$2"
         printf "Creating symlink for %s\n" "$source"
-        ln -svf "$source" "archiso/airootfs/etc/systemd/system/$target"
+        ln -sf "$source" "archiso/airootfs/etc/systemd/system/$target"
     }
-    
-
     
     create_symlink "/usr/lib/systemd/system/graphical.target" "default.target"
     create_symlink "/usr/lib/systemd/system/gdm.service" "display-manager.service"
@@ -38,7 +23,7 @@ enable_services() {
 }
 
 install_chaotic_aur() {
-    echo "Chaotic AUR is not installed on your system. Do you want to install it? [y/n] "
+    echo "Chaotic AUR is not available. You need to install it, press ENTER. "
     read -r install
     
     if [[ ${install:0:1} == "y" || ${install:0:1} == "" ]]; then
@@ -49,14 +34,16 @@ install_chaotic_aur() {
         if [ -f /etc/pacman.d/chaotic-mirrorlist ]; then
             echo "Successfully installed Chaotic AUR, continuing with the build."
         else
-            echo "Chaotic AUR mirrorlist not found, aborting build."
+            echo "Failed to install Chaotic AUR, building cannot continue."
             rerun=false
         fi
     else
-        echo "Chaotic AUR mirrorlist not found, aborting build."
+        echo "Quitting gracefully."
         rerun=false
     fi
 }
+
+echo "Now building aerOS version 2.0 PP1..."
 
 if [ ! -f /etc/pacman.d/chaotic-mirrorlist ]; then
     install_chaotic_aur
@@ -64,34 +51,27 @@ fi
 
 rerun=true
 while $rerun; do
-    if test -d work; then
+    if [ -d work ]; then
         clean
     fi
 
     enable_services
 
     if ! sudo mkarchiso -v archiso; then
+        retcod=$?
         set +e
         echo
-        echo -n "Build failed, do you want to retry the build? [y/n] "
+        echo -n "We couldn't build aerOS. Try again? [y/N] "
         read -r retry
         if [[ ${retry:0:1} != "y" ]]; then
             rerun=false
-            retcod=1
-        else
-            :
         fi
     else
         rerun=false
+        echo "Quitting gracefully."
     fi
 done
 
-test -d work && clean
-
-if [[ "$retcod" -eq 0 ]]; then
-    echo "Building finished successfully."
-else
-    echo "Building failed."
-fi
+[ -d work ] && clean
 
 exit $retcod
