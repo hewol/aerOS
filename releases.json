@@ -183,7 +183,7 @@
             "package_url": null,
             "changelog": [
                 "Redone the base system",
-                "Added package wrapper for choosing package providers",
+                "Added package wrapper for choosing package providers, work in progress",
                 "Added a new GNOME user interface based on GNOME 46"
             ]
         }

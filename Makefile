@@ -18,8 +18,8 @@ update: clean
     ( cd ./work/fs && rm -rf usr/lib/calamares usr/lib/libcalamares* usr/lib/initcpio/hooks/archiso* && rm -rf usr/lib/firmware )
     ( cd ./work/fs && rm -rf var/lib/pacman/local )
     ( cd ./work/fs && rm -rf boot dev home mnt proc root run srv sys tmp )
-    sed -i 's/archiso archiso_loop_mnt archiso_pxe_common archiso_pxe_nbd archiso_pxe_http archiso_pxe_nfs //g' ./work/fs/etc/mkinitcpio.conf
-    ( cd ./work/fs && tar -cf - . | pv -s $$(du -sb . | awk -v OFMT='%d' '{ print $$1*1.02 }' | cut -f1) | gzip -9 > ../../out/update.tar.gz )
+    sed -i 's/archiso //g' ./work/fs/etc/mkinitcpio.conf.d/archiso.conf
+    ( cd ./work/fs && tar -cf - . | pv | gzip -6 > ../../out/update.tar.gz )
 
 test-sudo:
     @[ $$UID = 0 ] || ( echo "error: must be root to do this."; false )
