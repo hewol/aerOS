@@ -4,7 +4,7 @@ set -e
 clean() {
     echo "Cleaning work directory"
     sudo umount -Rq work
-    sudo rm -rf work || echo "ALERT: Some mounted directories, were not removed, a reboot is required."
+    sudo rm -rf work || echo "NOTE: Some mounted directories were not removed, a reboot is required."
 }
 
 enable_services() {
@@ -36,14 +36,16 @@ install_chaotic_aur() {
         else
             echo "Failed to install Chaotic AUR, building cannot continue."
             rerun=false
+            code=2
         fi
     else
         echo "Quitting gracefully."
         rerun=false
+        code=0
     fi
 }
 
-echo "Now building aerOS version 2.0 PP1..."
+echo "Now building aerOS..."
 
 if [ ! -f /etc/pacman.d/chaotic-mirrorlist ]; then
     install_chaotic_aur
@@ -65,13 +67,15 @@ while $rerun; do
         read -r retry
         if [[ ${retry:0:1} != "y" ]]; then
             rerun=false
+            code=1
         fi
     else
         rerun=false
         echo "Quitting gracefully."
+        code=0
     fi
 done
 
 [ -d work ] && clean
 
-exit "$retcod"
+exit "$code"
