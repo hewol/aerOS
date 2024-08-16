@@ -3,8 +3,8 @@ set -e
 
 clean() {
     echo "Cleaning work directory"
-    sudo umount -Rq work || echo "ALERT: Some mounted directories were not removed, a reboot is required."
-    sudo rm -rf work
+    sudo umount -Rq work
+    sudo rm -rf work || echo "ALERT: Some mounted directories, were not removed, a reboot is required."
 }
 
 enable_services() {
@@ -74,4 +74,4 @@ done
 
 [ -d work ] && clean
 
-exit $retcod
+exit "$retcod"
