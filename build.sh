@@ -60,14 +60,13 @@ while $rerun; do
     enable_services
 
     if ! sudo mkarchiso -v archiso; then
-        retcod=$?
+        code=$?
         set +e
         echo
         echo -n "We couldn't build aerOS. Try again? [y/N] "
         read -r retry
         if [[ ${retry:0:1} != "y" ]]; then
             rerun=false
-            code=1
         fi
     else
         rerun=false
