@@ -22,34 +22,7 @@ enable_services() {
     create_symlink "/usr/lib/systemd/system/NetworkManager-wait-online.service" "network-online.target.wants/NetworkManager-wait-online.service"
 }
 
-install_chaotic_aur() {
-    echo "Chaotic AUR is not available. You need to install it, press ENTER. "
-    read -r install
-    
-    if [[ ${install:0:1} == "y" || ${install:0:1} == "" ]]; then
-        echo "Installing Chaotic AUR"
-        sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
-        sudo pacman-key --lsign-key 3056513887B78AEB
-        sudo pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
-        if [ -f /etc/pacman.d/chaotic-mirrorlist ]; then
-            echo "Successfully installed Chaotic AUR, continuing with the build."
-        else
-            echo "Failed to install Chaotic AUR, building cannot continue."
-            rerun=false
-            code=2
-        fi
-    else
-        echo "Quitting gracefully."
-        rerun=false
-        code=0
-    fi
-}
-
 echo "Now building aerOS..."
-
-if [ ! -f /etc/pacman.d/chaotic-mirrorlist ]; then
-    install_chaotic_aur
-fi
 
 rerun=true
 while $rerun; do

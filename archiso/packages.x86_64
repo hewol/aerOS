@@ -47,8 +47,6 @@ totem
 #
 aeros-calamares-config
 calamares-git
-chaotic-mirrorlist
-chaotic-keyring
 cronie
 firefox
 flatpak

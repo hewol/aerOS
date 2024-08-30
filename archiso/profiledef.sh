@@ -25,3 +25,6 @@ file_permissions=(
   ["/usr/local/bin/livecd-sound"]="0:0:755"
   ["/usr/bin/calamares_polkit"]="0:0:755"
 )
+
+# Insert GPG key of Hewol here
+# gpg_key=KEY_HERE
