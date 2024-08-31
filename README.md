@@ -3,6 +3,20 @@
 
 <p align="center">Have a weak PC? Try out <a href="https://github.com/hewol/aerOS-core">aerOS Core.</a></p>
 
+# Requirements
+To run aerOS smoothly, you should meet these requirements:
+
+### Recommended requirements
+* 4 GB or more RAM
+* Any modern 64-bit CPU (dual core or more)
+* 32 GB or more storage
+* Any modern GPU
+
+### Minimum requirements
+* 3 GB or more RAM
+* 64-bit CPU (single core or more)
+* 16 GB or more storage
+* At least an iGPU (otherwise how you will get display output?)
 
 # How To Build
 You can build aerOS successfully if you get `archiso`.<br>
@@ -16,21 +30,6 @@ Run `sudo pacman -Q archiso` before running the build script, then you can proce
 
 To build aerOS, run `time make` or `time ./build.sh` and wait. After some time you should receive your copy of aerOS. Enjoy!
 
-# Requirements
-To run aerOS smoothly, you should meet these requirements:
-
-### Recommended requirements
-* 4 GB or more RAM
-* Any modern 64-bit CPU
-* 20 GB or more storage
-* Any modern NVIDIA or AMD GPU
-
-### Minimum requirements
-* 2 GB or more RAM
-* At least an Intel Pentium 4 or AMD Athlon 64
-* 11 GB or more storage
-* At least an iGPU
-
 # Maintained Versions
 
 This is the list of aerOS releases.<br>
@@ -38,6 +37,8 @@ For maintained releases you will get official support.<br>
 For unmaintained versions of aerOS you won't get that, but you can still get community support and any package updates from Arch Linux.<br>
 It is always recommended to use the current release.
 
+* Each Planning Release won't get support.<br>
+<sub><sup>That's because those are prototype releases of aerOS and not very official.</sub></sup>
 * Each ESB (Early Stage Beta) release will get one month of support.<br>
 <sub><sup>No ESB release is supported anymore, and they are very broken. Please upgrade.</sub></sup>
 * Each Beta or RC release will get five months of support.<br>
@@ -46,11 +47,12 @@ It is always recommended to use the current release.
 <sub><sup>This is what you should use to get every feature and full support.</sub></sup>
 
 ### Supported Release Types
-Do not use any release types marked in ❌.
+Do not use any release types marked in ❌ (you can but not recomended).
 
 | Versions            | Maintained          | EOL Date            |
-| ------------------- | ------------------- | ------------------- | 
-| v1.0                | ✅                 | soon™               |
+| ------------------- | ------------------- | ------------------- |
+| v1.5                | ✅                 | 05/03/2025          |
+| v1.0                | ✅                 | 01/30/2025          |
 | v1.0 RC             | ❌                 | 05/25/2024          |
 | v1.0 Beta           | ❌                 | 03/29/2024          |
 | v1.0 Early Beta     | ❌                 | 11/09/2023          |
