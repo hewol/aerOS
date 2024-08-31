@@ -3,8 +3,7 @@ set -e
 
 clean() {
     echo "Cleaning work directory"
-    sudo umount -Rq work
-    sudo rm -rf work || echo "NOTE: Some mounted directories were not removed, a reboot is required."
+    sudo umount -Rq work && sudo rm -rf work || echo "NOTE: Some mounted directories were not removed, a reboot is required."
 }
 
 enable_services() {
@@ -26,28 +25,23 @@ echo "Now building aerOS..."
 
 rerun=true
 while $rerun; do
-    if [ -d work ]; then
-        clean
-    fi
+    [ -d work ] && clean
 
     enable_services
-
-    if ! sudo mkarchiso -v archiso; then
-        code=$?
+	sudo mkarchiso -v archiso
+	
+    if [[ $? -eq 1 ]]; then
         set +e
-        echo
         echo -n "We couldn't build aerOS. Try again? [y/N] "
+        echo
         read -r retry
         if [[ ${retry:0:1} != "y" ]]; then
             rerun=false
         fi
     else
+    	set +e
         rerun=false
-        echo "Quitting gracefully."
-        code=0
+        [ -d work ] && clean
+        exit 0
     fi
 done
-
-[ -d work ] && clean
-
-exit "$code"
