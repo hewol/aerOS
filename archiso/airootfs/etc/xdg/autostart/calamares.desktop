@@ -2,8 +2,8 @@
 Type=Application
 Version=1.0
 Name=Install aerOS
-GenericName=Live Installer
-Comment=Install the operating system to disk
+GenericName=LiveInstaller
+Comment=Install aerOS to your computer.
 Exec=/usr/bin/calamares_polkit %f
 Icon=calamares
 Terminal=false

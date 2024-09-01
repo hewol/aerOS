@@ -12,10 +12,11 @@ ConditionPathExists=/etc/rc.local
 [Service]
 Type=forking
 ExecStart=/etc/rc.local start
+Before=display-manager.service
 TimeoutSec=0
 StandardOutput=tty
 RemainAfterExit=yes
 SysVStartPriority=99
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=multi-user.target display-manager.service

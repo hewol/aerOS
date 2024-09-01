@@ -197,10 +197,7 @@ export const DockDash = GObject.registerClass({
         });
         this._box._delegate = this;
         this._boxContainer.add_child(this._box);
-        if (this._scrollView.add_actor)
-            this._scrollView.add_actor(this._boxContainer);
-        else
-            this._scrollView.add_child(this._boxContainer);
+        Utils.addActor(this._scrollView, this._boxContainer);
         this._dashContainer.add_child(this._scrollView);
 
         this._showAppsIcon = new AppIcons.DockShowAppsIcon(this._position);
@@ -1140,13 +1137,17 @@ export const DockDash = GObject.registerClass({
  * @param actor
  */
 function ensureActorVisibleInScrollView(scrollView, actor) {
-    const {adjustment: vAdjustment} = scrollView.vscroll;
-    const {adjustment: hAdjustment} = scrollView.hscroll;
+    // access to scrollView.[hv]scroll was deprecated in gnome 46
+    // instead, adjustment can be accessed directly
+    // keep old way for backwards compatibility (gnome <= 45)
+    const vAdjustment = scrollView.vadjustment ?? scrollView.vscroll.adjustment;
+    const hAdjustment = scrollView.hadjustment ?? scrollView.hscroll.adjustment;
     const {value: vValue0, pageSize: vPageSize, upper: vUpper} = vAdjustment;
     const {value: hValue0, pageSize: hPageSize, upper: hUpper} = hAdjustment;
     let [hValue, vValue] = [hValue0, vValue0];
     let vOffset = 0;
     let hOffset = 0;
+
     const fade = scrollView.get_effect('fade');
     if (fade) {
         vOffset = fade.fade_margins.top;

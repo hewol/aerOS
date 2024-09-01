@@ -1,2 +1,2 @@
 [org/gnome/shell]
-enabled-extensions=['blur-my-shell@aunetx', 'custom-accent-colors@demiskp', 'unblank@sun.wxg@gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'CoverflowAltTab@palatis.blogspot.com', 'GPU_profile_selector@lorenzo9904.gmail.com', 'caffeine@patapon.info', 'dash-to-dock@micxgx.gmail.com']
+enabled-extensions=['user-theme@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com', 'tilingshell@ferrarodomenico.com']

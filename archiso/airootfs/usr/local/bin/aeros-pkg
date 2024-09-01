@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+"""A wrapper around `pacman`, `yay` and `flatpak`, created for aerOS."""
+import sys
+
+def ansi(c):
+    """Output a given ANSI escape sequence."""
+    if c == "red":
+        return "\033[0;31m"
+    elif c == "yellow":
+        return "\033[0;33m"
+    elif c == "green":
+        return "\033[0;32m"
+    elif c == "blue":
+        return "\033[0;34m"
+    elif c == "reset":
+        return "\033[0m"
+    else:
+        raise ValueError("Invalid ANSI escape sequence requested")
+
+print(f"{ansi('yellow')}==> WARNING: {ansi('reset')}This is not yet implemented.")
+sys.exit(0)
