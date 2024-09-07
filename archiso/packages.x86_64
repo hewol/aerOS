@@ -46,7 +46,7 @@ totem
 # Note: Some of these packages are required by scripts used in aerOS.
 #
 aeros-calamares-config
-calamares-git
+calamares
 cronie
 firefox
 flatpak
