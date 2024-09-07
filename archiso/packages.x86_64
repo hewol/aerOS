@@ -136,7 +136,7 @@ zsh
 #######################################################
 
 aeros-calamares-config
-calamares-git
+calamares
 
 #######################################################
 ###      PACKAGES THAT STAY AFTER INSTALLATION      ###
